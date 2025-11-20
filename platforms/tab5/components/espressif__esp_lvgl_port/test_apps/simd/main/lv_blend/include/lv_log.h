@@ -30,24 +30,24 @@ extern "C" {
 
 /*Do nothing if `LV_USE_LOG 0`*/
 #define _lv_log_add(level, file, line, ...)
-#define LV_LOG_TRACE(...) \
-    do {                  \
-    } while (0)
-#define LV_LOG_INFO(...) \
-    do {                 \
-    } while (0)
-#define LV_LOG_WARN(...) \
-    do {                 \
-    } while (0)
-#define LV_LOG_ERROR(...) \
-    do {                  \
-    } while (0)
-#define LV_LOG_USER(...) \
-    do {                 \
-    } while (0)
-#define LV_LOG(...) \
-    do {            \
-    } while (0)
+#define LV_LOG_TRACE(...)                                                      \
+  do {                                                                         \
+  } while (0)
+#define LV_LOG_INFO(...)                                                       \
+  do {                                                                         \
+  } while (0)
+#define LV_LOG_WARN(...)                                                       \
+  do {                                                                         \
+  } while (0)
+#define LV_LOG_ERROR(...)                                                      \
+  do {                                                                         \
+  } while (0)
+#define LV_LOG_USER(...)                                                       \
+  do {                                                                         \
+  } while (0)
+#define LV_LOG(...)                                                            \
+  do {                                                                         \
+  } while (0)
 
 #ifdef __cplusplus
 } /*extern "C"*/

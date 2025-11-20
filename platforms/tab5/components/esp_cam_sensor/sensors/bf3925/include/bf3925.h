@@ -9,13 +9,14 @@
 extern "C" {
 #endif
 
-#include "esp_cam_sensor_types.h"
 #include "bf3925_types.h"
+#include "esp_cam_sensor_types.h"
 
 #define BF3925_SCCB_ADDR 0x6E
 
 /**
- * @brief Power on camera sensor device and detect the device connected to the designated sccb bus.
+ * @brief Power on camera sensor device and detect the device connected to the
+ * designated sccb bus.
  *
  * @param[in] config Configuration related to device power-on and detection.
  * @return

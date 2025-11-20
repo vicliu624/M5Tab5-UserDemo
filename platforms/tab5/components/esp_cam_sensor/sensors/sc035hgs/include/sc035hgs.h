@@ -15,7 +15,8 @@ extern "C" {
 #define SC035HGS_SCCB_ADDR 0x30
 
 /**
- * @brief Power on camera sensor device and detect the device connected to the designated sccb bus.
+ * @brief Power on camera sensor device and detect the device connected to the
+ * designated sccb bus.
  *
  * @param[in] config Configuration related to device power-on and detection.
  * @return

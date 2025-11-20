@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <stdint.h>
 #include "esp_err.h"
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,7 +16,7 @@ extern "C" {
 /**
  * @brief sccb io handle type
  */
-typedef struct esp_sccb_io_t* esp_sccb_io_handle_t;
+typedef struct esp_sccb_io_t *esp_sccb_io_handle_t;
 
 #ifdef __cplusplus
 }

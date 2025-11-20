@@ -16,8 +16,8 @@ extern "C" {
  * SC035HGS camera sensor register type definition.
  */
 typedef struct {
-    uint16_t reg;
-    uint8_t val;
+  uint16_t reg;
+  uint8_t val;
 } sc035hgs_reginfo_t;
 
 #ifdef __cplusplus

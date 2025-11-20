@@ -223,7 +223,8 @@ int8_t bmi2_set_i2c_wdt_en(uint8_t enable, struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the  enable/disable status of the i2c watchdog timer .
  *
- * @param[in] enable   : Pointer to get status of enable/disable i2c watchdog timer.
+ * @param[in] enable   : Pointer to get status of enable/disable i2c watchdog
+ * timer.
  * @param[in] dev      : Structure instance of bmi2_dev.
  *
  *@verbatim
@@ -297,7 +298,8 @@ int8_t bmi2_get_i2c_wdt_sel(uint8_t *watchdog_select, struct bmi2_dev *dev);
  * \ingroup bmi2ApiRegs
  * \page bmi2_api_bmi2_get_regs bmi2_get_regs
  * \code
- * int8_t bmi2_get_regs(uint8_t reg_addr, uint8_t *data, uint16_t len, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_regs(uint8_t reg_addr, uint8_t *data, uint16_t len, const
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API reads the data from the given register address of bmi2
  * sensor.
@@ -315,13 +317,15 @@ int8_t bmi2_get_i2c_wdt_sel(uint8_t *watchdog_select, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_regs(uint8_t reg_addr, uint8_t *data, uint16_t len, struct bmi2_dev *dev);
+int8_t bmi2_get_regs(uint8_t reg_addr, uint8_t *data, uint16_t len,
+                     struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiRegs
  * \page bmi2_api_bmi2_set_regs bmi2_set_regs
  * \code
- * int8_t bmi2_set_regs(uint8_t reg_addr, const uint8_t *data, uint16_t len, struct bmi2_dev *dev);
+ * int8_t bmi2_set_regs(uint8_t reg_addr, const uint8_t *data, uint16_t len,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API writes data to the given register address of bmi2 sensor.
  *
@@ -335,7 +339,8 @@ int8_t bmi2_get_regs(uint8_t reg_addr, uint8_t *data, uint16_t len, struct bmi2_
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_regs(uint8_t reg_addr, const uint8_t *data, uint16_t len, struct bmi2_dev *dev);
+int8_t bmi2_set_regs(uint8_t reg_addr, const uint8_t *data, uint16_t len,
+                     struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -373,19 +378,24 @@ int8_t bmi2_soft_reset(struct bmi2_dev *dev);
  * \ingroup bmi2ApiConfig
  * \page bmi2_api_bmi2_get_config_file_version bmi2_get_config_file_version
  * \code
- * int8_t bmi2_get_config_file_version(uint8_t *config_major, uint8_t *config_minor, struct bmi2_dev *dev);
+ * int8_t bmi2_get_config_file_version(uint8_t *config_major, uint8_t
+ * *config_minor, struct bmi2_dev *dev);
  * \endcode
  * @details This API is used to get the config file major and minor information.
  *
  * @param[in] dev   : Structure instance of bmi2_dev.
- * @param[out] config_major    : pointer to data buffer to store the config major.
- * @param[out] config_minor    : pointer to data buffer to store the config minor.
+ * @param[out] config_major    : pointer to data buffer to store the config
+ * major.
+ * @param[out] config_minor    : pointer to data buffer to store the config
+ * minor.
  *
  * @return Result of API execution status
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_config_file_version(uint8_t *config_major, uint8_t *config_minor, struct bmi2_dev *dev);
+int8_t bmi2_get_config_file_version(uint8_t *config_major,
+                                    uint8_t *config_minor,
+                                    struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -474,9 +484,11 @@ int8_t bmi2_set_fast_power_up(uint8_t fast_power_up, struct bmi2_dev *dev);
  * \code
  * int8_t bmi2_get_fast_power_up(uint8_t *fast_power_up, struct bmi2_dev *dev);
  * \endcode
- * @details This API gets the enable/disable status of the fast power up mode in the sensor.
+ * @details This API gets the enable/disable status of the fast power up mode in
+ * the sensor.
  *
- * @param[in] fast_power_up  : Pointer to get the enable/disable advance power mode.
+ * @param[in] fast_power_up  : Pointer to get the enable/disable advance power
+ * mode.
  * @param[in] dev            : Structure instance of bmi2_dev.
  *
  *@verbatim
@@ -518,7 +530,8 @@ int8_t bmi2_write_config_file(struct bmi2_dev *dev);
  * \ingroup bmi2ApiInt
  * \page bmi2_api_bmi2_set_int_pin_config bmi2_set_int_pin_config
  * \code
- * int8_t bmi2_set_int_pin_config(const struct bmi2_int_pin_config *int_cfg, struct bmi2_dev *dev);
+ * int8_t bmi2_set_int_pin_config(const struct bmi2_int_pin_config *int_cfg,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API sets:
  *        1) The input output configuration of the selected interrupt pin:
@@ -532,13 +545,15 @@ int8_t bmi2_write_config_file(struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_int_pin_config(const struct bmi2_int_pin_config *int_cfg, struct bmi2_dev *dev);
+int8_t bmi2_set_int_pin_config(const struct bmi2_int_pin_config *int_cfg,
+                               struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiInt
  * \page bmi2_api_bmi2_get_int_pin_config bmi2_get_int_pin_config
  * \code
- * int8_t bmi2_get_int_pin_config(struct bmi2_int_pin_config *int_cfg, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_int_pin_config(struct bmi2_int_pin_config *int_cfg, const
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API gets:
  *        1) The input output configuration of the selected interrupt pin:
@@ -552,7 +567,8 @@ int8_t bmi2_set_int_pin_config(const struct bmi2_int_pin_config *int_cfg, struct
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_int_pin_config(struct bmi2_int_pin_config *int_cfg, struct bmi2_dev *dev);
+int8_t bmi2_get_int_pin_config(struct bmi2_int_pin_config *int_cfg,
+                               struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiInt
@@ -595,7 +611,8 @@ int8_t bmi2_get_int_status(uint16_t *int_status, struct bmi2_dev *dev);
  * \ingroup bmi2ApiSensorC
  * \page bmi2_api_bmi2_set_sensor_config bmi2_set_sensor_config
  * \code
- * int8_t bmi2_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi2_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t
+ * n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API sets the sensor/feature configuration.
  *
@@ -618,13 +635,15 @@ int8_t bmi2_get_int_status(uint16_t *int_status, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi2_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens,
+                              struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiSensorC
  * \page bmi2_api_bmi2_get_sensor_config bmi2_get_sensor_config
  * \code
- * int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t
+ * n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the sensor/feature configuration.
  *
@@ -647,7 +666,8 @@ int8_t bmi2_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens,
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens,
+                              struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -659,7 +679,8 @@ int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens,
  * \ingroup bmi2ApiSensor
  * \page bmi2_api_bmi2_sensor_enable bmi2_sensor_enable
  * \code
- * int8_t bmi2_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi2_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be enabled.
  *
@@ -686,13 +707,15 @@ int8_t bmi2_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens,
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi2_sensor_enable(const uint8_t *sens_list, uint8_t n_sens,
+                          struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiSensor
  * \page bmi2_api_bmi2_sensor_disable bmi2_sensor_disable
  * \code
- * int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be disabled.
  *
@@ -719,7 +742,8 @@ int8_t bmi2_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens,
+                           struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -731,9 +755,11 @@ int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2
  * \ingroup bmi2ApiSensorD
  * \page bmi2_api_bmi2_get_feature_data bmi2_get_feature_data
  * \code
- * int8_t bmi2_get_feature_data(struct bmi2_feat_sensor_data *feat_sensor_data, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi2_get_feature_data(struct bmi2_feat_sensor_data *feat_sensor_data,
+ * uint8_t n_sens, struct bmi2_dev *dev);
  * \endcode
- * @details This API gets the feature data for gyroscope user-gain update and gyroscope cross sensitivity
+ * @details This API gets the feature data for gyroscope user-gain update and
+ * gyroscope cross sensitivity
  *
  * @param[out] feat_sensor_data   : Structure instance of bmi2_feat_sensor_data.
  * @param[in]  n_sens             : Number of sensors selected.
@@ -752,15 +778,18 @@ int8_t bmi2_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_feature_data(struct bmi2_feat_sensor_data *feat_sensor_data, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi2_get_feature_data(struct bmi2_feat_sensor_data *feat_sensor_data,
+                             uint8_t n_sens, struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiSensorD
  * \page bmi2_api_bmi2_get_sensor_data bmi2_get_sensor_data
  * \code
- * int8_t bmi2_get_sensor_data(struct bmi2_sens_data *data, struct bmi2_dev *dev);
+ * int8_t bmi2_get_sensor_data(struct bmi2_sens_data *data, struct bmi2_dev
+ * *dev);
  * \endcode
- * @details This API gets the sensor data for accelerometer, gyroscope and auxiliary sensor
+ * @details This API gets the sensor data for accelerometer, gyroscope and
+ * auxiliary sensor
  *
  * @param[out] data          : Structure instance of bmi2_sens_data.
  * @param[in]  dev           : Structure instance of bmi2_dev.
@@ -785,10 +814,12 @@ int8_t bmi2_get_sensor_data(struct bmi2_sens_data *data, struct bmi2_dev *dev);
  * \endcode
  * @details This API reads the raw temperature data from the register and can be
  * converted into degree celsius using the below formula.
- * Formula: temperature_value = (float)(((float)((int16_t)temperature_data)) / 512.0) + 23.0
+ * Formula: temperature_value = (float)(((float)((int16_t)temperature_data)) /
+ * 512.0) + 23.0
  * @note Enable gyro to read temperature
  *
- * @param[out] temp_data : Pointer variable which stores the raw temperature value.
+ * @param[out] temp_data : Pointer variable which stores the raw temperature
+ * value.
  * @param[in] dev   : Structure instance of bmi2_dev.
  *
  *
@@ -802,11 +833,14 @@ int8_t bmi2_get_temperature_data(uint16_t *temp_data, struct bmi2_dev *dev);
  * \ingroup bmi2ApiSensorD
  * \page bmi2_api_bmi2_parse_sensor_data bmi2_parse_sensor_data
  * \code
- * int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data, struct bmi2_sens_data *data, const struct bmi2_dev *dev);
+ * int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data, struct
+ * bmi2_sens_data *data, const struct bmi2_dev *dev);
  * \endcode
- * @details This API parses the sensor data for accelerometer, gyroscope and auxiliary sensor
+ * @details This API parses the sensor data for accelerometer, gyroscope and
+ * auxiliary sensor
  *
- * @param[in] sensor_data    : Array of register data (24 bytes from Register 0x03 to 0x1A)
+ * @param[in] sensor_data    : Array of register data (24 bytes from Register
+ * 0x03 to 0x1A)
  * @param[out] data          : Structure instance of bmi2_sens_data.
  * @param[in]  dev           : Structure instance of bmi2_dev.
  *
@@ -814,7 +848,9 @@ int8_t bmi2_get_temperature_data(uint16_t *temp_data, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data, struct bmi2_sens_data *data, const struct bmi2_dev *dev);
+int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data,
+                              struct bmi2_sens_data *data,
+                              const struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -826,7 +862,8 @@ int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data, struct bmi2_sens_data 
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_set_fifo_config bmi2_set_fifo_config
  * \code
- * int8_t bmi2_set_fifo_config(uint16_t config, uint8_t enable, struct bmi2_dev *dev);
+ * int8_t bmi2_set_fifo_config(uint16_t config, uint8_t enable, struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API sets the FIFO configuration in the sensor.
  *
@@ -845,13 +882,15 @@ int8_t bmi2_parse_sensor_data(const uint8_t *sensor_data, struct bmi2_sens_data 
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_fifo_config(uint16_t config, uint8_t enable, struct bmi2_dev *dev);
+int8_t bmi2_set_fifo_config(uint16_t config, uint8_t enable,
+                            struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_get_fifo_config bmi2_get_fifo_config
  * \code
- * int8_t bmi2_get_fifo_config(uint16_t *fifo_config, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_fifo_config(uint16_t *fifo_config, const struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API gets the FIFO configuration from the sensor.
  *
@@ -868,7 +907,8 @@ int8_t bmi2_get_fifo_config(uint16_t *fifo_config, struct bmi2_dev *dev);
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_read_fifo_data bmi2_read_fifo_data
  * \code
- * int8_t bmi2_read_fifo_data(struct bmi2_fifo_frame *fifo, const struct bmi2_dev *dev);
+ * int8_t bmi2_read_fifo_data(struct bmi2_fifo_frame *fifo, const struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API reads FIFO data.
  *
@@ -894,9 +934,9 @@ int8_t bmi2_read_fifo_data(struct bmi2_fifo_frame *fifo, struct bmi2_dev *dev);
  *                          struct bmi2_fifo_frame *fifo,
  *                          const struct bmi2_dev *dev);
  * \endcode
- * @details This API parses and extracts the accelerometer frames from FIFO data read by
- * the "bmi2_read_fifo_data" API and stores it in the "accel_data" structure
- * instance.
+ * @details This API parses and extracts the accelerometer frames from FIFO data
+ * read by the "bmi2_read_fifo_data" API and stores it in the "accel_data"
+ * structure instance.
  *
  * @param[out]    accel_data   : Structure instance of bmi2_sens_axes_data
  *                               where the parsed data bytes are stored.
@@ -908,7 +948,8 @@ int8_t bmi2_read_fifo_data(struct bmi2_fifo_frame *fifo, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_extract_accel(struct bmi2_sens_axes_data *accel_data, uint16_t *accel_length, struct bmi2_fifo_frame *fifo,
+int8_t bmi2_extract_accel(struct bmi2_sens_axes_data *accel_data,
+                          uint16_t *accel_length, struct bmi2_fifo_frame *fifo,
                           const struct bmi2_dev *dev);
 
 /*!
@@ -934,7 +975,8 @@ int8_t bmi2_extract_accel(struct bmi2_sens_axes_data *accel_data, uint16_t *acce
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_extract_aux(struct bmi2_aux_fifo_data *aux, uint16_t *aux_length, struct bmi2_fifo_frame *fifo,
+int8_t bmi2_extract_aux(struct bmi2_aux_fifo_data *aux, uint16_t *aux_length,
+                        struct bmi2_fifo_frame *fifo,
                         const struct bmi2_dev *dev);
 
 /*!
@@ -946,8 +988,8 @@ int8_t bmi2_extract_aux(struct bmi2_aux_fifo_data *aux, uint16_t *aux_length, st
  *                        struct bmi2_fifo_frame *fifo,
  *                        const struct bmi2_dev *dev);
  * \endcode
- * @details This API parses and extracts the gyroscope frames from FIFO data read by the
- * "bmi2_read_fifo_data" API and stores it in the "gyro_data"
+ * @details This API parses and extracts the gyroscope frames from FIFO data
+ * read by the "bmi2_read_fifo_data" API and stores it in the "gyro_data"
  * structure instance.
  *
  * @param[out]    gyro_data    : Structure instance of bmi2_sens_axes_data
@@ -960,7 +1002,8 @@ int8_t bmi2_extract_aux(struct bmi2_aux_fifo_data *aux, uint16_t *aux_length, st
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_extract_gyro(struct bmi2_sens_axes_data *gyro_data, uint16_t *gyro_length, struct bmi2_fifo_frame *fifo,
+int8_t bmi2_extract_gyro(struct bmi2_sens_axes_data *gyro_data,
+                         uint16_t *gyro_length, struct bmi2_fifo_frame *fifo,
                          const struct bmi2_dev *dev);
 
 /**
@@ -975,7 +1018,8 @@ int8_t bmi2_extract_gyro(struct bmi2_sens_axes_data *gyro_data, uint16_t *gyro_l
  * \code
  * int8_t bmi2_set_command_register(uint8_t command, struct bmi2_dev *dev);
  * \endcode
- * @details This API writes the available sensor specific commands to the sensor.
+ * @details This API writes the available sensor specific commands to the
+ * sensor.
  *
  * @param[in] command     : Commands to be given to the sensor.
  * @param[in] dev         : Structure instance of bmi2_dev.
@@ -998,7 +1042,8 @@ int8_t bmi2_set_command_register(uint8_t command, struct bmi2_dev *dev);
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_set_fifo_self_wake_up bmi2_set_fifo_self_wake_up
  * \code
- * int8_t bmi2_set_fifo_self_wake_up(uint8_t fifo_self_wake_up, struct bmi2_dev *dev);
+ * int8_t bmi2_set_fifo_self_wake_up(uint8_t fifo_self_wake_up, struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API sets the FIFO self wake up functionality in the sensor.
  *
@@ -1016,13 +1061,15 @@ int8_t bmi2_set_command_register(uint8_t command, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_fifo_self_wake_up(uint8_t fifo_self_wake_up, struct bmi2_dev *dev);
+int8_t bmi2_set_fifo_self_wake_up(uint8_t fifo_self_wake_up,
+                                  struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_get_fifo_self_wake_up bmi2_get_fifo_self_wake_up
  * \code
- * int8_t bmi2_get_fifo_self_wake_up(uint8_t *fifo_self_wake_up, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_fifo_self_wake_up(uint8_t *fifo_self_wake_up, const struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API gets the FIFO self wake up functionality from the sensor.
  *
@@ -1041,7 +1088,8 @@ int8_t bmi2_set_fifo_self_wake_up(uint8_t fifo_self_wake_up, struct bmi2_dev *de
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_fifo_self_wake_up(uint8_t *fifo_self_wake_up, struct bmi2_dev *dev);
+int8_t bmi2_get_fifo_self_wake_up(uint8_t *fifo_self_wake_up,
+                                  struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
@@ -1081,7 +1129,8 @@ int8_t bmi2_get_fifo_wm(uint16_t *fifo_wm, struct bmi2_dev *dev);
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_set_fifo_filter_data bmi2_set_fifo_filter_data
  * \code
- * int8_t bmi2_set_fifo_filter_data(uint8_t sens_sel, uint8_t fifo_filter_data, struct bmi2_dev *dev);
+ * int8_t bmi2_set_fifo_filter_data(uint8_t sens_sel, uint8_t fifo_filter_data,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API sets either filtered or un-filtered FIFO accelerometer or
  * gyroscope data.
@@ -1109,13 +1158,15 @@ int8_t bmi2_get_fifo_wm(uint16_t *fifo_wm, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_fifo_filter_data(uint8_t sens_sel, uint8_t fifo_filter_data, struct bmi2_dev *dev);
+int8_t bmi2_set_fifo_filter_data(uint8_t sens_sel, uint8_t fifo_filter_data,
+                                 struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_get_fifo_filter_data bmi2_get_fifo_filter_data
  * \code
- * int8_t bmi2_get_fifo_filter_data(uint8_t sens_sel, uint8_t *fifo_filter_data, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_fifo_filter_data(uint8_t sens_sel, uint8_t *fifo_filter_data,
+ * const struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the FIFO accelerometer or gyroscope filter data.
  *
@@ -1142,13 +1193,15 @@ int8_t bmi2_set_fifo_filter_data(uint8_t sens_sel, uint8_t fifo_filter_data, str
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_fifo_filter_data(uint8_t sens_sel, uint8_t *fifo_filter_data, struct bmi2_dev *dev);
+int8_t bmi2_get_fifo_filter_data(uint8_t sens_sel, uint8_t *fifo_filter_data,
+                                 struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_set_fifo_down_sample bmi2_set_fifo_down_sample
  * \code
- * int8_t bmi2_set_fifo_down_sample(uint8_t sens_sel, uint8_t fifo_down_samp, struct bmi2_dev *dev);
+ * int8_t bmi2_set_fifo_down_sample(uint8_t sens_sel, uint8_t fifo_down_samp,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API sets the down sampling rate for FIFO accelerometer or
  * gyroscope FIFO data.
@@ -1169,13 +1222,15 @@ int8_t bmi2_get_fifo_filter_data(uint8_t sens_sel, uint8_t *fifo_filter_data, st
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_fifo_down_sample(uint8_t sens_sel, uint8_t fifo_down_samp, struct bmi2_dev *dev);
+int8_t bmi2_set_fifo_down_sample(uint8_t sens_sel, uint8_t fifo_down_samp,
+                                 struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_get_fifo_down_sample bmi2_get_fifo_down_sample
  * \code
- * int8_t bmi2_get_fifo_down_sample(uint8_t sens_sel, uint8_t *fifo_down_samp, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_fifo_down_sample(uint8_t sens_sel, uint8_t *fifo_down_samp,
+ * const struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the down sampling rate, configured for FIFO
  * accelerometer or gyroscope data.
@@ -1196,13 +1251,15 @@ int8_t bmi2_set_fifo_down_sample(uint8_t sens_sel, uint8_t fifo_down_samp, struc
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_fifo_down_sample(uint8_t sens_sel, uint8_t *fifo_down_samp, struct bmi2_dev *dev);
+int8_t bmi2_get_fifo_down_sample(uint8_t sens_sel, uint8_t *fifo_down_samp,
+                                 struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFIFO
  * \page bmi2_api_bmi2_get_fifo_length bmi2_get_fifo_length
  * \code
- * int8_t bmi2_get_fifo_length(uint16_t *fifo_length, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_fifo_length(uint16_t *fifo_length, const struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API gets the length of FIFO data available in the sensor in
  * bytes.
@@ -1370,10 +1427,11 @@ int8_t bmi2_set_spi3_ois_mode(uint8_t enable, struct bmi2_dev *dev);
  * \ingroup bmi2ApiAux
  * \page bmi2_api_bmi2_read_aux_man_mode bmi2_read_aux_man_mode
  * \code
- * int8_t bmi2_read_aux_man_mode(uint8_t reg_addr, uint8_t *aux_data, uint16_t len, struct bmi2_dev *dev);
+ * int8_t bmi2_read_aux_man_mode(uint8_t reg_addr, uint8_t *aux_data, uint16_t
+ * len, struct bmi2_dev *dev);
  * \endcode
- * @details This API reads the user-defined bytes of data from the given register
- * address of auxiliary sensor in manual mode.
+ * @details This API reads the user-defined bytes of data from the given
+ * register address of auxiliary sensor in manual mode.
  *
  * @param[in]  reg_addr     : Address from where data is read.
  * @param[out] aux_data     : Pointer to the stored buffer.
@@ -1386,13 +1444,15 @@ int8_t bmi2_set_spi3_ois_mode(uint8_t enable, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_read_aux_man_mode(uint8_t reg_addr, uint8_t *aux_data, uint16_t len, struct bmi2_dev *dev);
+int8_t bmi2_read_aux_man_mode(uint8_t reg_addr, uint8_t *aux_data, uint16_t len,
+                              struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiAux
  * \page bmi2_api_bmi2_write_aux_man_mode bmi2_write_aux_man_mode
  * \code
- * int8_t bmi2_write_aux_man_mode(uint8_t reg_addr, const uint8_t *aux_data, uint16_t len, struct bmi2_dev *dev);
+ * int8_t bmi2_write_aux_man_mode(uint8_t reg_addr, const uint8_t *aux_data,
+ * uint16_t len, struct bmi2_dev *dev);
  * \endcode
  * @details This API writes the user-defined bytes of data and the address of
  * auxiliary sensor where data is to be written in manual mode.
@@ -1408,7 +1468,8 @@ int8_t bmi2_read_aux_man_mode(uint8_t reg_addr, uint8_t *aux_data, uint16_t len,
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_write_aux_man_mode(uint8_t reg_addr, const uint8_t *aux_data, uint16_t len, struct bmi2_dev *dev);
+int8_t bmi2_write_aux_man_mode(uint8_t reg_addr, const uint8_t *aux_data,
+                               uint16_t len, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -1454,7 +1515,8 @@ int8_t bmi2_get_status(uint8_t *status, struct bmi2_dev *dev);
  * \ingroup bmi2ApiWSync
  * \page bmi2_api_bmi2_write_sync_commands bmi2_write_sync_commands
  * \code
- * int8_t bmi2_write_sync_commands(const uint8_t *command, uint8_t n_comm, struct bmi2_dev *dev);
+ * int8_t bmi2_write_sync_commands(const uint8_t *command, uint8_t n_comm,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API can be used to write sync commands like ODR, sync period,
  * frequency and phase, resolution ratio, sync time and delay time.
@@ -1467,7 +1529,8 @@ int8_t bmi2_get_status(uint8_t *status, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_write_sync_commands(const uint8_t *command, uint8_t n_comm, struct bmi2_dev *dev);
+int8_t bmi2_write_sync_commands(const uint8_t *command, uint8_t n_comm,
+                                struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -1496,7 +1559,8 @@ int8_t bmi2_perform_accel_self_test(struct bmi2_dev *dev);
  * \ingroup bmi2ApiInt
  * \page bmi2_api_bmi2_map_feat_int bmi2_map_feat_int
  * \code
- * int8_t bmi2_map_feat_int(const struct bmi2_sens_int_config *sens_int, struct bmi2_dev *dev);
+ * int8_t bmi2_map_feat_int(const struct bmi2_sens_int_config *sens_int, struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API maps/unmaps feature interrupts to that of interrupt pins.
  *
@@ -1507,13 +1571,15 @@ int8_t bmi2_perform_accel_self_test(struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_map_feat_int(uint8_t type, enum bmi2_hw_int_pin hw_int_pin, struct bmi2_dev *dev);
+int8_t bmi2_map_feat_int(uint8_t type, enum bmi2_hw_int_pin hw_int_pin,
+                         struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiInt
  * \page bmi2_api_bmi2_map_data_int bmi2_map_data_int
  * \code
- * int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin, struct bmi2_dev *dev);
+ * int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API maps/un-maps data interrupts to that of interrupt pins.
  *
@@ -1534,7 +1600,8 @@ int8_t bmi2_map_feat_int(uint8_t type, enum bmi2_hw_int_pin hw_int_pin, struct b
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin, struct bmi2_dev *dev);
+int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin,
+                         struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -1546,7 +1613,8 @@ int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin, struct 
  * \ingroup bmi2ApiRemap
  * \page bmi2_api_bmi2_get_remap_axes bmi2_get_remap_axes
  * \code
- * int8_t bmi2_get_remap_axes(struct bmi2_remap *remapped_axis, struct bmi2_dev *dev);
+ * int8_t bmi2_get_remap_axes(struct bmi2_remap *remapped_axis, struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API gets the re-mapped x, y and z axes from the sensor and
  * updates the values in the device structure.
@@ -1558,13 +1626,15 @@ int8_t bmi2_map_data_int(uint8_t data_int, enum bmi2_hw_int_pin int_pin, struct 
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_remap_axes(struct bmi2_remap *remapped_axis, struct bmi2_dev *dev);
+int8_t bmi2_get_remap_axes(struct bmi2_remap *remapped_axis,
+                           struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiRemap
  * \page bmi2_api_bmi2_set_remap_axes bmi2_set_remap_axes
  * \code
- * int8_t bmi2_set_remap_axes(const struct bmi2_remap *remapped_axis, struct bmi2_dev *dev);
+ * int8_t bmi2_set_remap_axes(const struct bmi2_remap *remapped_axis, struct
+ * bmi2_dev *dev);
  * \endcode
  * @details This API sets the re-mapped x, y and z axes to the sensor and
  * updates them in the device structure.
@@ -1576,7 +1646,8 @@ int8_t bmi2_get_remap_axes(struct bmi2_remap *remapped_axis, struct bmi2_dev *de
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_set_remap_axes(const struct bmi2_remap *remapped_axis, struct bmi2_dev *dev);
+int8_t bmi2_set_remap_axes(const struct bmi2_remap *remapped_axis,
+                           struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -1639,7 +1710,8 @@ int8_t bmi2_get_gyro_offset_comp(uint8_t *offset, struct bmi2_dev *dev);
  * \code
  * int8_t bmi2_set_gyro_gain(uint8_t gyro_gain, struct bmi2_dev *dev);
  * \endcode
- * @details This API enables/disables gyroscope gain for Sensitivity Error Compensation.
+ * @details This API enables/disables gyroscope gain for Sensitivity Error
+ * Compensation.
  *
  * @param[in] gyro_gain      : Enables/Disables gyroscope gain.
  * @param[in] dev            : Structure instance of bmi2_dev.
@@ -1676,9 +1748,11 @@ int8_t bmi2_get_gyro_gain(uint8_t *gyro_gain, struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiGyroOC
- * \page bmi2_api_bmi2_read_gyro_offset_comp_axes bmi2_read_gyro_offset_comp_axes
+ * \page bmi2_api_bmi2_read_gyro_offset_comp_axes
+ * bmi2_read_gyro_offset_comp_axes
  * \code
- * int8_t bmi2_read_gyro_offset_comp_axes(struct bmi2_sens_axes_data *gyr_off_comp_axes, const struct bmi2_dev *dev);
+ * int8_t bmi2_read_gyro_offset_comp_axes(struct bmi2_sens_axes_data
+ * *gyr_off_comp_axes, const struct bmi2_dev *dev);
  * \endcode
  * @details This API reads the gyroscope bias values for each axis which is used
  * for gyroscope offset compensation.
@@ -1691,16 +1765,20 @@ int8_t bmi2_get_gyro_gain(uint8_t *gyro_gain, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_read_gyro_offset_comp_axes(struct bmi2_sens_axes_data *gyr_off_comp_axes, struct bmi2_dev *dev);
+int8_t
+bmi2_read_gyro_offset_comp_axes(struct bmi2_sens_axes_data *gyr_off_comp_axes,
+                                struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiGyroOC
- * \page bmi2_api_bmi2_write_gyro_offset_comp_axes bmi2_write_gyro_offset_comp_axes
+ * \page bmi2_api_bmi2_write_gyro_offset_comp_axes
+ * bmi2_write_gyro_offset_comp_axes
  * \code
- * int8_t bmi2_write_gyro_offset_comp_axes(const struct bmi2_sens_axes_data *gyr_off_comp_axes, struct bmi2_dev *dev);
+ * int8_t bmi2_write_gyro_offset_comp_axes(const struct bmi2_sens_axes_data
+ * *gyr_off_comp_axes, struct bmi2_dev *dev);
  * \endcode
- * @details This API writes the gyroscope bias values for each axis which is used
- * for gyroscope offset compensation.
+ * @details This API writes the gyroscope bias values for each axis which is
+ * used for gyroscope offset compensation.
  *
  * @param[in] gyr_off_comp_axes : Structure to store gyroscope offset
  *                              compensated values.
@@ -1710,7 +1788,8 @@ int8_t bmi2_read_gyro_offset_comp_axes(struct bmi2_sens_axes_data *gyr_off_comp_
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_write_gyro_offset_comp_axes(const struct bmi2_sens_axes_data *gyr_off_comp_axes, struct bmi2_dev *dev);
+int8_t bmi2_write_gyro_offset_comp_axes(
+    const struct bmi2_sens_axes_data *gyr_off_comp_axes, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -1724,8 +1803,8 @@ int8_t bmi2_write_gyro_offset_comp_axes(const struct bmi2_sens_axes_data *gyr_of
  * \code
  * int8_t bmi2_get_gyro_cross_sense(struct bmi2_dev *dev);
  * \endcode
- * @details This API updates the cross sensitivity coefficient between gyroscope's
- * X and Z axes.
+ * @details This API updates the cross sensitivity coefficient between
+ * gyroscope's X and Z axes.
  *
  * @param[in, out]  dev     : Structure instance of bmi2_dev.
  *
@@ -1745,7 +1824,8 @@ int8_t bmi2_get_gyro_cross_sense(struct bmi2_dev *dev);
  * \ingroup bmi2ApiInts
  * \page bmi2_api_bmi2_get_internal_status bmi2_get_internal_status
  * \code
- * int8_t bmi2_get_internal_status(uint8_t *int_stat, const struct bmi2_dev *dev);
+ * int8_t bmi2_get_internal_status(uint8_t *int_stat, const struct bmi2_dev
+ * *dev);
  * \endcode
  * @details This API gets error bits and message indicating internal status.
  *
@@ -1864,7 +1944,8 @@ int8_t bmi2_set_err_reg_mask(uint8_t err_reg, struct bmi2_dev *dev);
  * \ingroup bmi2ApiFOC
  * \page bmi2_api_bmi2_perform_accel_foc bmi2_perform_accel_foc
  * \code
- * int8_t bmi2_perform_accel_foc(const struct bmi2_accel_foc_g_value *accel_g_value, struct bmi2_dev *dev);
+ * int8_t bmi2_perform_accel_foc(const struct bmi2_accel_foc_g_value
+ * *accel_g_value, struct bmi2_dev *dev);
  * \endcode
  * @details This API performs Fast Offset Compensation for accelerometer.
  *
@@ -1883,7 +1964,9 @@ int8_t bmi2_set_err_reg_mask(uint8_t err_reg, struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_perform_accel_foc(const struct bmi2_accel_foc_g_value *accel_g_value, struct bmi2_dev *dev);
+int8_t
+bmi2_perform_accel_foc(const struct bmi2_accel_foc_g_value *accel_g_value,
+                       struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi2ApiFOC
@@ -1922,7 +2005,8 @@ int8_t bmi2_perform_gyro_foc(struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  *
- * @note CRT calibration takes approximately 500ms & maximum time out configured as 2 seconds
+ * @note CRT calibration takes approximately 500ms & maximum time out configured
+ * as 2 seconds
  */
 int8_t bmi2_do_crt(struct bmi2_dev *dev);
 
@@ -1999,7 +2083,8 @@ int8_t bmi2_nvm_prog(struct bmi2_dev *dev);
  * @retval  BMI2_FALSE : Feature not found
  *          BMI2_TRUE  : Feature found
  */
-uint8_t bmi2_extract_input_feat_config(struct bmi2_feature_config *feat_config, uint8_t type,
+uint8_t bmi2_extract_input_feat_config(struct bmi2_feature_config *feat_config,
+                                       uint8_t type,
                                        const struct bmi2_dev *dev);
 
 /*!
@@ -2014,7 +2099,8 @@ uint8_t bmi2_extract_input_feat_config(struct bmi2_feature_config *feat_config, 
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_get_feat_config(uint8_t sw_page, uint8_t *feat_config, struct bmi2_dev *dev);
+int8_t bmi2_get_feat_config(uint8_t sw_page, uint8_t *feat_config,
+                            struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi2
@@ -2044,12 +2130,13 @@ int8_t bmi2_set_accel_offset_comp(uint8_t offset_en, struct bmi2_dev *dev);
  * \ingroup bmi2AccelOffset
  * \page bmi2_api_bmi2_get_accel_offset_comp bmi2_get_accel_offset_comp
  * \code
- * int8_t bmi2_get_accel_offset_comp(uint8_t *accel_offset, struct bmi2_dev *dev);
+ * int8_t bmi2_get_accel_offset_comp(uint8_t *accel_offset, struct bmi2_dev
+ * *dev);
  * \endcode
  * @brief This internal API reads the accelerometer offset compensation value.
  *
- * @param[in] accel_offset  : Pointer to an array of size 3 to hold Accel Axis X, Y, Z,
- *                            Offset Compensation.
+ * @param[in] accel_offset  : Pointer to an array of size 3 to hold Accel Axis
+ * X, Y, Z, Offset Compensation.
  * @param[in] dev           : Structure instance of bmi2_dev
  *
  * @return Result of API execution status

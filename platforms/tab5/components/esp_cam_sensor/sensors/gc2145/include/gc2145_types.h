@@ -16,8 +16,8 @@ extern "C" {
  * GC2145 camera sensor register type definition.
  */
 typedef struct {
-    uint8_t reg;
-    uint8_t val;
+  uint8_t reg;
+  uint8_t val;
 } gc2145_reginfo_t;
 
 #ifdef __cplusplus

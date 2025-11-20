@@ -67,32 +67,32 @@ extern "C" {
 #define BMI270_LEGACY_CHIP_ID UINT8_C(0x24)
 
 /*! @name BMI270_LEGACY feature input start addresses */
-#define BMI270_LEGACY_CONFIG_ID_STRT_ADDR            UINT8_C(0x00)
-#define BMI270_LEGACY_MAX_BURST_LEN_STRT_ADDR        UINT8_C(0x02)
-#define BMI270_LEGACY_CRT_GYRO_SELF_TEST_STRT_ADDR   UINT8_C(0x03)
-#define BMI270_LEGACY_ABORT_STRT_ADDR                UINT8_C(0x03)
-#define BMI270_LEGACY_AXIS_MAP_STRT_ADDR             UINT8_C(0x04)
-#define BMI270_LEGACY_GYRO_SELF_OFF_STRT_ADDR        UINT8_C(0x05)
-#define BMI270_LEGACY_NVM_PROG_PREP_STRT_ADDR        UINT8_C(0x05)
-#define BMI270_LEGACY_ANY_MOT_STRT_ADDR              UINT8_C(0x06)
-#define BMI270_LEGACY_NO_MOT_STRT_ADDR               UINT8_C(0x0A)
-#define BMI270_LEGACY_ORIENT_STRT_ADDR               UINT8_C(0x00)
-#define BMI270_LEGACY_HIGH_G_STRT_ADDR               UINT8_C(0x04)
-#define BMI270_LEGACY_LOW_G_STRT_ADDR                UINT8_C(0x0A)
-#define BMI270_LEGACY_FLAT_STRT_ADDR                 UINT8_C(0x00)
-#define BMI270_LEGACY_SIG_MOT_STRT_ADDR              UINT8_C(0x04)
-#define BMI270_LEGACY_STEP_COUNT_STRT_ADDR           UINT8_C(0x00)
+#define BMI270_LEGACY_CONFIG_ID_STRT_ADDR UINT8_C(0x00)
+#define BMI270_LEGACY_MAX_BURST_LEN_STRT_ADDR UINT8_C(0x02)
+#define BMI270_LEGACY_CRT_GYRO_SELF_TEST_STRT_ADDR UINT8_C(0x03)
+#define BMI270_LEGACY_ABORT_STRT_ADDR UINT8_C(0x03)
+#define BMI270_LEGACY_AXIS_MAP_STRT_ADDR UINT8_C(0x04)
+#define BMI270_LEGACY_GYRO_SELF_OFF_STRT_ADDR UINT8_C(0x05)
+#define BMI270_LEGACY_NVM_PROG_PREP_STRT_ADDR UINT8_C(0x05)
+#define BMI270_LEGACY_ANY_MOT_STRT_ADDR UINT8_C(0x06)
+#define BMI270_LEGACY_NO_MOT_STRT_ADDR UINT8_C(0x0A)
+#define BMI270_LEGACY_ORIENT_STRT_ADDR UINT8_C(0x00)
+#define BMI270_LEGACY_HIGH_G_STRT_ADDR UINT8_C(0x04)
+#define BMI270_LEGACY_LOW_G_STRT_ADDR UINT8_C(0x0A)
+#define BMI270_LEGACY_FLAT_STRT_ADDR UINT8_C(0x00)
+#define BMI270_LEGACY_SIG_MOT_STRT_ADDR UINT8_C(0x04)
+#define BMI270_LEGACY_STEP_COUNT_STRT_ADDR UINT8_C(0x00)
 #define BMI270_LEGACY_GYRO_USERGAIN_UPDATE_STRT_ADDR UINT8_C(0x04)
-#define BMI270_LEGACY_TAP_DETECT_1_STRT_ADDR         UINT8_C(0x00)
-#define BMI270_LEGACY_TAP_DETECT_2_STRT_ADDR         UINT8_C(0x00)
+#define BMI270_LEGACY_TAP_DETECT_1_STRT_ADDR UINT8_C(0x00)
+#define BMI270_LEGACY_TAP_DETECT_2_STRT_ADDR UINT8_C(0x00)
 
 /*! @name BMI270_LEGACY feature output start addresses */
-#define BMI270_LEGACY_STEP_CNT_OUT_STRT_ADDR      UINT8_C(0x00)
-#define BMI270_LEGACY_STEP_ACT_OUT_STRT_ADDR      UINT8_C(0x04)
+#define BMI270_LEGACY_STEP_CNT_OUT_STRT_ADDR UINT8_C(0x00)
+#define BMI270_LEGACY_STEP_ACT_OUT_STRT_ADDR UINT8_C(0x04)
 #define BMI270_LEGACY_ORIENT_HIGH_G_OUT_STRT_ADDR UINT8_C(0x06)
 #define BMI270_LEGACY_GYR_USER_GAIN_OUT_STRT_ADDR UINT8_C(0x08)
-#define BMI270_LEGACY_GYRO_CROSS_SENSE_STRT_ADDR  UINT8_C(0x0C)
-#define BMI270_LEGACY_NVM_VFRM_OUT_STRT_ADDR      UINT8_C(0x0E)
+#define BMI270_LEGACY_GYRO_CROSS_SENSE_STRT_ADDR UINT8_C(0x0C)
+#define BMI270_LEGACY_NVM_VFRM_OUT_STRT_ADDR UINT8_C(0x0E)
 
 /*! @name Defines maximum number of pages */
 #define BMI270_LEGACY_MAX_PAGE_NUM UINT8_C(8)
@@ -104,43 +104,43 @@ extern "C" {
 #define BMI270_LEGACY_MAX_FEAT_OUT UINT8_C(8)
 
 /*! @name Mask definitions for feature interrupt status bits */
-#define BMI270_LEGACY_SIG_MOT_STATUS_MASK  UINT8_C(0x01)
+#define BMI270_LEGACY_SIG_MOT_STATUS_MASK UINT8_C(0x01)
 #define BMI270_LEGACY_STEP_CNT_STATUS_MASK UINT8_C(0x02)
-#define BMI270_LEGACY_HIGH_G_STATUS_MASK   UINT8_C(0x04)
-#define BMI270_LEGACY_LOW_G_STATUS_MASK    UINT8_C(0x04)
-#define BMI270_LEGACY_TAP_STATUS_MASK      UINT8_C(0x08)
-#define BMI270_LEGACY_FLAT_STATUS_MASK     UINT8_C(0x10)
-#define BMI270_LEGACY_NO_MOT_STATUS_MASK   UINT8_C(0x20)
-#define BMI270_LEGACY_ANY_MOT_STATUS_MASK  UINT8_C(0x40)
-#define BMI270_LEGACY_ORIENT_STATUS_MASK   UINT8_C(0x80)
-#define BMI270_LEGACY_SINGLE_TAP_MASK      UINT8_C(0x20)
-#define BMI270_LEGACY_DOUBLE_TAP_MASK      UINT8_C(0x40)
-#define BMI270_LEGACY_TRIPLE_TAP_MASK      UINT8_C(0x80)
+#define BMI270_LEGACY_HIGH_G_STATUS_MASK UINT8_C(0x04)
+#define BMI270_LEGACY_LOW_G_STATUS_MASK UINT8_C(0x04)
+#define BMI270_LEGACY_TAP_STATUS_MASK UINT8_C(0x08)
+#define BMI270_LEGACY_FLAT_STATUS_MASK UINT8_C(0x10)
+#define BMI270_LEGACY_NO_MOT_STATUS_MASK UINT8_C(0x20)
+#define BMI270_LEGACY_ANY_MOT_STATUS_MASK UINT8_C(0x40)
+#define BMI270_LEGACY_ORIENT_STATUS_MASK UINT8_C(0x80)
+#define BMI270_LEGACY_SINGLE_TAP_MASK UINT8_C(0x20)
+#define BMI270_LEGACY_DOUBLE_TAP_MASK UINT8_C(0x40)
+#define BMI270_LEGACY_TRIPLE_TAP_MASK UINT8_C(0x80)
 
 /*! @name Status register for tap */
 #define BMI270_LEGACY_TAP_STATUS_REG UINT8_C(0x20)
 
 /*! @name Macros for high-g interrupt axis/sign */
-#define BMI270_LEGACY_HIGH_G_DETECT_X    UINT8_C(0x08)
-#define BMI270_LEGACY_HIGH_G_DETECT_Y    UINT8_C(0x10)
-#define BMI270_LEGACY_HIGH_G_DETECT_Z    UINT8_C(0x20)
+#define BMI270_LEGACY_HIGH_G_DETECT_X UINT8_C(0x08)
+#define BMI270_LEGACY_HIGH_G_DETECT_Y UINT8_C(0x10)
+#define BMI270_LEGACY_HIGH_G_DETECT_Z UINT8_C(0x20)
 #define BMI270_LEGACY_HIGH_G_DETECT_SIGN UINT8_C(0x40)
 
 /*! @name Mask definitions for feature interrupt mapping bits */
-#define BMI270_LEGACY_INT_SIG_MOT_MASK       UINT8_C(0x01)
-#define BMI270_LEGACY_INT_STEP_COUNTER_MASK  UINT8_C(0x02)
+#define BMI270_LEGACY_INT_SIG_MOT_MASK UINT8_C(0x01)
+#define BMI270_LEGACY_INT_STEP_COUNTER_MASK UINT8_C(0x02)
 #define BMI270_LEGACY_INT_STEP_DETECTOR_MASK UINT8_C(0x02)
 #define BMI270_LEGACY_INT_STEP_ACTIVITY_MASK UINT8_C(0x02)
-#define BMI270_LEGACY_INT_HIGH_G_MASK        UINT8_C(0x04)
-#define BMI270_LEGACY_INT_LOW_G_MASK         UINT8_C(0x04)
-#define BMI270_LEGACY_INT_TAP_MASK           UINT8_C(0x08)
-#define BMI270_LEGACY_INT_FLAT_MASK          UINT8_C(0x10)
-#define BMI270_LEGACY_INT_NO_MOT_MASK        UINT8_C(0x20)
-#define BMI270_LEGACY_INT_ANY_MOT_MASK       UINT8_C(0x40)
-#define BMI270_LEGACY_INT_ORIENT_MASK        UINT8_C(0x80)
-#define BMI270_LEGACY_INT_SINGLE_TAP_MASK    UINT8_C(0x20)
-#define BMI270_LEGACY_INT_DOUBLE_TAP_MASK    UINT8_C(0x40)
-#define BMI270_LEGACY_INT_TRIPLE_TAP_MASK    UINT8_C(0x80)
+#define BMI270_LEGACY_INT_HIGH_G_MASK UINT8_C(0x04)
+#define BMI270_LEGACY_INT_LOW_G_MASK UINT8_C(0x04)
+#define BMI270_LEGACY_INT_TAP_MASK UINT8_C(0x08)
+#define BMI270_LEGACY_INT_FLAT_MASK UINT8_C(0x10)
+#define BMI270_LEGACY_INT_NO_MOT_MASK UINT8_C(0x20)
+#define BMI270_LEGACY_INT_ANY_MOT_MASK UINT8_C(0x40)
+#define BMI270_LEGACY_INT_ORIENT_MASK UINT8_C(0x80)
+#define BMI270_LEGACY_INT_SINGLE_TAP_MASK UINT8_C(0x20)
+#define BMI270_LEGACY_INT_DOUBLE_TAP_MASK UINT8_C(0x40)
+#define BMI270_LEGACY_INT_TRIPLE_TAP_MASK UINT8_C(0x80)
 
 /*! @name Defines maximum number of feature interrupts */
 #define BMI270_LEGACY_MAX_INT_MAP UINT8_C(14)
@@ -185,9 +185,11 @@ int8_t bmi270_legacy_init(struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_legacyApiSensor
- * \page bmi270_legacy_api_bmi270_legacy_sensor_enable bmi270_legacy_sensor_enable
+ * \page bmi270_legacy_api_bmi270_legacy_sensor_enable
+ * bmi270_legacy_sensor_enable
  * \code
- * int8_t bmi270_legacy_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_sensor_enable(const uint8_t *sens_list, uint8_t n_sens,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be enabled.
  *
@@ -228,13 +230,16 @@ int8_t bmi270_legacy_init(struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_legacy_sensor_enable(const uint8_t *sens_list, uint8_t n_sens,
+                                   struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_legacyApiSensor
- * \page bmi270_legacy_api_bmi270_legacy_sensor_disable bmi270_legacy_sensor_disable
+ * \page bmi270_legacy_api_bmi270_legacy_sensor_disable
+ * bmi270_legacy_sensor_disable
  * \code
- * int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be disabled.
  *
@@ -275,7 +280,8 @@ int8_t bmi270_legacy_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, str
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens,
+                                    struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_legacy
@@ -285,9 +291,11 @@ int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, st
 
 /*!
  * \ingroup bmi270_legacyApiSensorC
- * \page bmi270_legacy_api_bmi270_legacy_set_sensor_config bmi270_legacy_set_sensor_config
+ * \page bmi270_legacy_api_bmi270_legacy_set_sensor_config
+ * bmi270_legacy_set_sensor_config
  * \code
- * int8_t bmi270_legacy_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_set_sensor_config(struct bmi2_sens_config *sens_cfg,
+ * uint8_t n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API sets the sensor/feature configuration.
  *
@@ -317,13 +325,16 @@ int8_t bmi270_legacy_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, st
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_legacy_set_sensor_config(struct bmi2_sens_config *sens_cfg,
+                                       uint8_t n_sens, struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_legacyApiSensorC
- * \page bmi270_legacy_api_bmi270_legacy_get_sensor_config bmi270_legacy_get_sensor_config
+ * \page bmi270_legacy_api_bmi270_legacy_get_sensor_config
+ * bmi270_legacy_get_sensor_config
  * \code
- * int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg,
+ * uint8_t n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the sensor/feature configuration.
  *
@@ -353,7 +364,8 @@ int8_t bmi270_legacy_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg,
+                                       uint8_t n_sens, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_legacy
@@ -363,10 +375,11 @@ int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_
 
 /*!
  * \ingroup bmi270_legacyApiSensorD
- * \page bmi270_legacy_api_bmi270_legacy_get_feature_data bmi270_legacy_get_feature_data
+ * \page bmi270_legacy_api_bmi270_legacy_get_feature_data
+ * bmi270_legacy_get_feature_data
  * \code
- * int8_t bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data *feature_data, uint8_t n_sens, struct bmi2_dev
- **dev); \endcode
+ * int8_t bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data
+ * *feature_data, uint8_t n_sens, struct bmi2_dev *dev); \endcode
  * @details This API gets the feature data.
  *
  * @param[out] feature_data   : Structure instance of bmi2_feat_sensor_data.
@@ -390,7 +403,9 @@ int8_t bmi270_legacy_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data *feature_data, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t
+bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data *feature_data,
+                               uint8_t n_sens, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_legacy
@@ -400,9 +415,11 @@ int8_t bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data *feature_data
 
 /*!
  * \ingroup bmi270_legacyApiGyroUG
- * \page bmi270_legacy_api_bmi270_legacy_update_gyro_user_gain bmi270_legacy_update_gyro_user_gain
+ * \page bmi270_legacy_api_bmi270_legacy_update_gyro_user_gain
+ * bmi270_legacy_update_gyro_user_gain
  * \code
- * int8_t bmi270_legacy_update_gyro_user_gain(const struct bmi2_gyro_user_gain_config *user_gain, struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_update_gyro_user_gain(const struct
+ * bmi2_gyro_user_gain_config *user_gain, struct bmi2_dev *dev);
  * \endcode
  * @details This API updates the gyroscope user-gain.
  *
@@ -413,13 +430,16 @@ int8_t bmi270_legacy_get_feature_data(struct bmi2_feat_sensor_data *feature_data
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_update_gyro_user_gain(const struct bmi2_gyro_user_gain_config *user_gain, struct bmi2_dev *dev);
+int8_t bmi270_legacy_update_gyro_user_gain(
+    const struct bmi2_gyro_user_gain_config *user_gain, struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_legacyApiGyroUG
- * \page bmi270_legacy_api_bmi270_legacy_read_gyro_user_gain bmi270_legacy_read_gyro_user_gain
+ * \page bmi270_legacy_api_bmi270_legacy_read_gyro_user_gain
+ * bmi270_legacy_read_gyro_user_gain
  * \code
- * int8_t bmi270_legacy_read_gyro_user_gain(struct bmi2_gyro_user_gain_data *gyr_usr_gain, const struct bmi2_dev *dev);
+ * int8_t bmi270_legacy_read_gyro_user_gain(struct bmi2_gyro_user_gain_data
+ * *gyr_usr_gain, const struct bmi2_dev *dev);
  * \endcode
  * @details This API reads the compensated gyroscope user-gain values.
  *
@@ -430,13 +450,16 @@ int8_t bmi270_legacy_update_gyro_user_gain(const struct bmi2_gyro_user_gain_conf
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_read_gyro_user_gain(struct bmi2_gyro_user_gain_data *gyr_usr_gain, struct bmi2_dev *dev);
+int8_t
+bmi270_legacy_read_gyro_user_gain(struct bmi2_gyro_user_gain_data *gyr_usr_gain,
+                                  struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_legacyApiInt
  * \page bmi270_legacy_api_bmi270_legacy_map_feat_int bmi270_legacy_map_feat_int
  * \code
- * int8_t bmi270_legacy_map_feat_int(const struct bmi2_sens_int_config *sens_int, uint8_t n_sens, struct bmi2_dev *dev)
+ * int8_t bmi270_legacy_map_feat_int(const struct bmi2_sens_int_config
+ * *sens_int, uint8_t n_sens, struct bmi2_dev *dev)
  * \endcode
  * @details This API maps/unmaps feature interrupts to that of interrupt pins.
  *
@@ -448,7 +471,8 @@ int8_t bmi270_legacy_read_gyro_user_gain(struct bmi2_gyro_user_gain_data *gyr_us
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_legacy_map_feat_int(const struct bmi2_sens_int_config *sens_int, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_legacy_map_feat_int(const struct bmi2_sens_int_config *sens_int,
+                                  uint8_t n_sens, struct bmi2_dev *dev);
 
 /******************************************************************************/
 /*! @name       C++ Guard Macros                                      */

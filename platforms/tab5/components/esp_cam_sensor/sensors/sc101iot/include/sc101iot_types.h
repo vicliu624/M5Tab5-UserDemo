@@ -16,8 +16,8 @@ extern "C" {
  * SC101IOT camera sensor register type definition.
  */
 typedef struct {
-    uint8_t reg;
-    uint8_t val;
+  uint8_t reg;
+  uint8_t val;
 } sc101iot_reginfo_t;
 
 #ifdef __cplusplus

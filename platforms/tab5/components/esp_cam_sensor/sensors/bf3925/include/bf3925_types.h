@@ -16,8 +16,8 @@ extern "C" {
  * BF3925 camera sensor register type definition.
  */
 typedef struct {
-    uint8_t reg;
-    uint8_t val;
+  uint8_t reg;
+  uint8_t val;
 } bf3925_reginfo_t;
 
 #ifdef __cplusplus

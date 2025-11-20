@@ -88,7 +88,8 @@ extern "C" {
 
 /*!
  * \ingroup bmi270_maximum_fifoApiInit
- * \page bmi270_maximum_fifo_api_bmi270_maximum_fifo_init bmi270_maximum_fifo_init
+ * \page bmi270_maximum_fifo_api_bmi270_maximum_fifo_init
+ * bmi270_maximum_fifo_init
  * \code
  * int8_t bmi270_maximum_fifo_init(struct bmi2_dev *dev);
  * \endcode

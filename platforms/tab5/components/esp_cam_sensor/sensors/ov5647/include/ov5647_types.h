@@ -16,8 +16,8 @@ extern "C" {
  * OV5647 camera sensor register type definition.
  */
 typedef struct {
-    uint16_t reg;
-    uint8_t val;
+  uint16_t reg;
+  uint8_t val;
 } ov5647_reginfo_t;
 
 #ifdef __cplusplus

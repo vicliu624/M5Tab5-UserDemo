@@ -4,9 +4,9 @@
 #ifndef __FMATH_H__
 #define __FMATH_H__
 
-#include <stdlib.h>
-#include <stdint.h>
 #include <float.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 #include <math.h>
 
@@ -20,35 +20,26 @@ float fast_powf(float a, float b);
 void fast_get_min_max(float *data, size_t data_len, float *p_min, float *p_max);
 
 // 快速平方根函数
-static inline float fast_sqrtf(float x)
-{
-    return sqrtf(x);
-}
+static inline float fast_sqrtf(float x) { return sqrtf(x); }
 
 // 快速 floor 函数
-static inline int fast_floorf(float x)
-{
-    int i = (int)x;
-    return (x < 0 && x != i) ? i - 1 : i;
+static inline int fast_floorf(float x) {
+  int i = (int)x;
+  return (x < 0 && x != i) ? i - 1 : i;
 }
 
 // 快速 ceil 函数
-static inline int fast_ceilf(float x)
-{
-    int i = (int)x;
-    return (x > 0 && x != i) ? i + 1 : i;
+static inline int fast_ceilf(float x) {
+  int i = (int)x;
+  return (x > 0 && x != i) ? i + 1 : i;
 }
 
 // 快速 round 函数
-static inline int fast_roundf(float x)
-{
-    return (int)(x + (x >= 0 ? 0.5f : -0.5f));
+static inline int fast_roundf(float x) {
+  return (int)(x + (x >= 0 ? 0.5f : -0.5f));
 }
 
 // 快速 fabs 函数
-static inline float fast_fabsf(float x)
-{
-    return (x >= 0) ? x : -x;
-}
+static inline float fast_fabsf(float x) { return (x >= 0) ? x : -x; }
 
-#endif  // __FMATH_H__
+#endif // __FMATH_H__

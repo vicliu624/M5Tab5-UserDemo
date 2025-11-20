@@ -19,16 +19,17 @@ extern "C" {
  * @brief Rotation configuration
  */
 typedef enum {
-    LVGL_PORT_DISP_TYPE_OTHER,
-    LVGL_PORT_DISP_TYPE_DSI,
-    LVGL_PORT_DISP_TYPE_RGB,
+  LVGL_PORT_DISP_TYPE_OTHER,
+  LVGL_PORT_DISP_TYPE_DSI,
+  LVGL_PORT_DISP_TYPE_RGB,
 } lvgl_port_disp_type_t;
 
 /**
  * @brief Rotation configuration
  */
 typedef struct {
-    unsigned int avoid_tearing : 1; /*!< Use internal RGB buffers as a LVGL draw buffers to avoid tearing effect */
+  unsigned int avoid_tearing : 1; /*!< Use internal RGB buffers as a LVGL draw
+                                     buffers to avoid tearing effect */
 } lvgl_port_disp_priv_cfg_t;
 
 /**

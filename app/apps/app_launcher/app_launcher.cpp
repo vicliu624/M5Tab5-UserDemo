@@ -4,42 +4,33 @@
  * SPDX-License-Identifier: MIT
  */
 #include "app_launcher.h"
+#include <assets/assets.h>
 #include <hal/hal.h>
 #include <mooncake.h>
 #include <mooncake_log.h>
 #include <smooth_lvgl.h>
-#include <assets/assets.h>
 
 using namespace mooncake;
 
-AppLauncher::AppLauncher()
-{
-    setAppInfo().name = "AppLauncher";
+AppLauncher::AppLauncher() { setAppInfo().name = "AppLauncher"; }
+
+void AppLauncher::onCreate() {
+  mclog::tagInfo(getAppInfo().name, "on create");
+
+  open();
 }
 
-void AppLauncher::onCreate()
-{
-    mclog::tagInfo(getAppInfo().name, "on create");
+void AppLauncher::onOpen() {
+  mclog::tagInfo(getAppInfo().name, "on open");
 
-    open();
+  _view = std::make_unique<launcher_view::LauncherView>();
+  _view->init();
 }
 
-void AppLauncher::onOpen()
-{
-    mclog::tagInfo(getAppInfo().name, "on open");
+void AppLauncher::onRunning() { _view->update(); }
 
-    _view = std::make_unique<launcher_view::LauncherView>();
-    _view->init();
-}
+void AppLauncher::onClose() {
+  mclog::tagInfo(getAppInfo().name, "on close");
 
-void AppLauncher::onRunning()
-{
-    _view->update();
-}
-
-void AppLauncher::onClose()
-{
-    mclog::tagInfo(getAppInfo().name, "on close");
-
-    _view.reset();
+  _view.reset();
 }

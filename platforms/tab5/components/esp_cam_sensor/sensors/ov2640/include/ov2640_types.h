@@ -16,17 +16,17 @@ extern "C" {
  * OV2640 camera sensor register type definition.
  */
 typedef struct {
-    uint8_t reg;
-    uint8_t val;
+  uint8_t reg;
+  uint8_t val;
 } ov2640_reginfo_t;
 
 /*
  * OV2640 camera sensor register banks definition.
  */
 typedef enum {
-    BANK_DSP,     // When register 0xFF=0x00, DSP register bank is available
-    BANK_SENSOR,  // When register 0xFF=0x01, Sensor register bank is available
-    BANK_MAX,
+  BANK_DSP,    // When register 0xFF=0x00, DSP register bank is available
+  BANK_SENSOR, // When register 0xFF=0x01, Sensor register bank is available
+  BANK_MAX,
 } ov2640_bank_t;
 
 #ifdef __cplusplus

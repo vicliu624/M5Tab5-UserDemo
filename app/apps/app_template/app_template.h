@@ -17,11 +17,11 @@
  */
 class AppTemplate : public mooncake::AppAbility {
 public:
-    AppTemplate();
+  AppTemplate();
 
-    // 重写生命周期回调
-    void onCreate() override;
-    void onOpen() override;
-    void onRunning() override;
-    void onClose() override;
+  // 重写生命周期回调
+  void onCreate() override;
+  void onOpen() override;
+  void onRunning() override;
+  void onClose() override;
 };

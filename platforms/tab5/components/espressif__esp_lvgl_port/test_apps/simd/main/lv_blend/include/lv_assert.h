@@ -39,17 +39,17 @@ extern "C" {
 /**********************
  *      MACROS
  **********************/
-#define LV_ASSERT_HANDLER \
-    while (1)             \
-        ; /*Halt by default*/
+#define LV_ASSERT_HANDLER                                                      \
+  while (1)                                                                    \
+    ; /*Halt by default*/
 
-#define LV_ASSERT(expr)                                        \
-    do {                                                       \
-        if (!(expr)) {                                         \
-            LV_LOG_ERROR("Asserted at expression: %s", #expr); \
-            LV_ASSERT_HANDLER                                  \
-        }                                                      \
-    } while (0)
+#define LV_ASSERT(expr)                                                        \
+  do {                                                                         \
+    if (!(expr)) {                                                             \
+      LV_LOG_ERROR("Asserted at expression: %s", #expr);                       \
+      LV_ASSERT_HANDLER                                                        \
+    }                                                                          \
+  } while (0)
 
 /*-----------------
  * ASSERTS

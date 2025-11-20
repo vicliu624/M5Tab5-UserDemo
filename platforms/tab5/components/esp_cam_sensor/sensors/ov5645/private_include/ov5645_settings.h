@@ -6,61 +6,48 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <sdkconfig.h>
 #include "ov5645_regs.h"
 #include "ov5645_types.h"
+#include <sdkconfig.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define OV5645_SOFT_POWER_DOWN_EN             (0x42)
-#define OV5645_SOFT_POWER_DOWN_DIS            (0x02)
-#define OV5645_OUTPUT_ENABLE_DEFAULT          (0)
-#define OV5645_IDI_CLOCK_RATE_640x480_24FPS   (104000000ULL)
-#define OV5645_IDI_CLOCK_RATE_1280x960_30FPS  (112000000ULL)
+#define OV5645_SOFT_POWER_DOWN_EN (0x42)
+#define OV5645_SOFT_POWER_DOWN_DIS (0x02)
+#define OV5645_OUTPUT_ENABLE_DEFAULT (0)
+#define OV5645_IDI_CLOCK_RATE_640x480_24FPS (104000000ULL)
+#define OV5645_IDI_CLOCK_RATE_1280x960_30FPS (112000000ULL)
 #define OV5645_IDI_CLOCK_RATE_2592x1944_15FPS (84000000ULL)
 #define OV5645_IDI_CLOCK_RATE_1920x1080_15FPS (84000000ULL)
-// Note, all clock configurations default to using 2 data lane mode, so use bitwidth divide by 2
-#define OV5645_LINE_RATE_8BITS_1280x960_30FPS (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 4)
+// Note, all clock configurations default to using 2 data lane mode, so use
+// bitwidth divide by 2
+#define OV5645_LINE_RATE_8BITS_1280x960_30FPS                                  \
+  (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 4)
 // Note, for mipi rgb565\yuv422\yuv420 use 16bit trans len for each pixel
-#define OV5645_LINE_RATE_16BITS_640x480_24FPS   (OV5645_IDI_CLOCK_RATE_640x480_24FPS * 8)
-#define OV5645_LINE_RATE_16BITS_1280x960_30FPS  (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 8)
-#define OV5645_LINE_RATE_16BITS_1920x1080_15FPS (OV5645_IDI_CLOCK_RATE_1920x1080_15FPS * 8)
-#define OV5645_LINE_RATE_16BITS_2592x1944_15FPS (OV5645_IDI_CLOCK_RATE_2592x1944_15FPS * 8)
-#define OV5645_LINE_RATE_24BITS_1280x960_30FPS  (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 12)
+#define OV5645_LINE_RATE_16BITS_640x480_24FPS                                  \
+  (OV5645_IDI_CLOCK_RATE_640x480_24FPS * 8)
+#define OV5645_LINE_RATE_16BITS_1280x960_30FPS                                 \
+  (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 8)
+#define OV5645_LINE_RATE_16BITS_1920x1080_15FPS                                \
+  (OV5645_IDI_CLOCK_RATE_1920x1080_15FPS * 8)
+#define OV5645_LINE_RATE_16BITS_2592x1944_15FPS                                \
+  (OV5645_IDI_CLOCK_RATE_2592x1944_15FPS * 8)
+#define OV5645_LINE_RATE_24BITS_1280x960_30FPS                                 \
+  (OV5645_IDI_CLOCK_RATE_1280x960_30FPS * 12)
 
-#define ov5645_settings_raw8  \
-    {FORMAT_CTRL0, 0x00},     \
-    {                         \
-        FORMAT_MUX_CTRL, 0x03 \
-    }
+#define ov5645_settings_raw8 {FORMAT_CTRL0, 0x00}, {FORMAT_MUX_CTRL, 0x03}
 
-#define ov5645_settings_rgb565 \
-    {FORMAT_CTRL0, 0x6F},      \
-    {                          \
-        FORMAT_MUX_CTRL, 0x01  \
-    }
+#define ov5645_settings_rgb565 {FORMAT_CTRL0, 0x6F}, {FORMAT_MUX_CTRL, 0x01}
 
-#define ov5645_settings_yuv422 \
-    {FORMAT_CTRL0, 0x31},      \
-    {                          \
-        FORMAT_MUX_CTRL, 0x00  \
-    }
+#define ov5645_settings_yuv422 {FORMAT_CTRL0, 0x31}, {FORMAT_MUX_CTRL, 0x00}
 
-#define ov5645_settings_yuv420 \
-    {FORMAT_CTRL0, 0x5F},      \
-    {                          \
-        FORMAT_MUX_CTRL, 0x00  \
-    }
+#define ov5645_settings_yuv420 {FORMAT_CTRL0, 0x5F}, {FORMAT_MUX_CTRL, 0x00}
 
 /* Note, YUV444/RGB888 not available for full resolution(2592x1964) */
-#define ov5645_settings_rgb888 \
-    {FORMAT_CTRL0, 0x25},      \
-    {                          \
-        FORMAT_MUX_CTRL, 0x00  \
-    }
+#define ov5645_settings_rgb888 {FORMAT_CTRL0, 0x25}, {FORMAT_MUX_CTRL, 0x00}
 
 static const ov5645_reginfo_t ov5645_mipi_reset_regs[] = {
     {0x3103, 0x11},
@@ -69,7 +56,8 @@ static const ov5645_reginfo_t ov5645_mipi_reset_regs[] = {
     // Ensure streaming off to make clock lane go into LP-11 state.
     {0x4800, 0x05},
     {OV5645_REG_DELAY, 0x10},
-    {0x3008, OV5645_SOFT_POWER_DOWN_EN},  // bit[6]=1: software power down default
+    {0x3008,
+     OV5645_SOFT_POWER_DOWN_EN}, // bit[6]=1: software power down default
     {OV5645_REG_END, 0x00},
 };
 
@@ -95,8 +83,9 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_960p_30fps[] = {
     {0x3002, 0x1c},
     {0x3006, 0xc3},
     {0x300e, 0x45}, /* MIPI 2 lane */
-    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as default, [2]=1 MIPI bus LP11 when no
-    //packet; Default=0x04
+    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as
+    //default, [2]=1 MIPI bus LP11 when no
+    // packet; Default=0x04
     {0x4800, CONFIG_CAMERA_OV5645_CSI_LINESYNC_ENABLE ? 0x14 : 0x04},
     {0x3017, 0x40},
     {0x3018, 0x00},
@@ -206,7 +195,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_960p_30fps[] = {
     {0x481f, 0x50},
     {0x4823, 0x70},
     {0x4831, 0x14},
-    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on # of lanes) notice the settle delay.
+    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on
+    // # of lanes) notice the settle delay.
     {0x4837, (1000000000 / OV5645_IDI_CLOCK_RATE_1280x960_30FPS) * 2},
     {0x5000, 0xa7},
     {0x501d, 0x00},
@@ -385,7 +375,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_960p_30fps[] = {
     {0x3a1e, 0x30},
     {0x3a1f, 0x18},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby(power down)
+    {0x3008,
+     OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby(power down)
 #endif
     {OV5645_REG_END, 0x00},
 };
@@ -400,8 +391,9 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_rgb565_960p_30fps[] = {
     {0x3002, 0x1c},
     {0x3006, 0xc3},
     {0x300e, 0x45}, /* MIPI 2 lane */
-    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as default, [2]=1 MIPI bus LP11 when no
-    //packet; Default=0x04
+    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as
+    //default, [2]=1 MIPI bus LP11 when no
+    // packet; Default=0x04
     {0x4800, CONFIG_CAMERA_OV5645_CSI_LINESYNC_ENABLE ? 0x14 : 0x04},
     {0x3017, 0x40},
     {0x3018, 0x00},
@@ -511,7 +503,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_rgb565_960p_30fps[] = {
     {0x481f, 0x50},
     {0x4823, 0x70},
     {0x4831, 0x14},
-    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on # of lanes) notice the settle delay.
+    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on
+    // # of lanes) notice the settle delay.
     {0x4837, (1000000000 / OV5645_IDI_CLOCK_RATE_1280x960_30FPS) * 2},
     {0x5000, 0xa7},
     {0x501d, 0x00},
@@ -690,7 +683,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_rgb565_960p_30fps[] = {
     {0x3a1e, 0x30},
     {0x3a1f, 0x18},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby(power down)
+    {0x3008,
+     OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby(power down)
 #endif
     {OV5645_REG_END, 0x00},
 };
@@ -705,8 +699,9 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv420_960p_30fps[] = {
     {0x3002, 0x1c},
     {0x3006, 0xc3},
     {0x300e, 0x45}, /* MIPI 2 lane */
-    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as default, [2]=1 MIPI bus LP11 when no
-    //packet; Default=0x04
+    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as
+    //default, [2]=1 MIPI bus LP11 when no
+    // packet; Default=0x04
     {0x4800, CONFIG_CAMERA_OV5645_CSI_LINESYNC_ENABLE ? 0x14 : 0x04},
     {0x3017, 0x40},
     {0x3018, 0x00},
@@ -816,7 +811,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv420_960p_30fps[] = {
     {0x481f, 0x50},
     {0x4823, 0x70},
     {0x4831, 0x14},
-    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on # of lanes) notice the settle delay.
+    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on
+    // # of lanes) notice the settle delay.
     {0x4837, (1000000000 / OV5645_IDI_CLOCK_RATE_1280x960_30FPS) * 2},
     {0x5000, 0xa7},
     {0x501d, 0x00},
@@ -995,7 +991,8 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv420_960p_30fps[] = {
     {0x3a1e, 0x30},
     {0x3a1f, 0x18},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby(power down)
+    {0x3008,
+     OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby(power down)
 #endif
     {OV5645_REG_END, 0x00},
 };
@@ -1296,7 +1293,7 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_1080p_15fps[] = {
     {0x3a1e, 0x30},
     {0x3a1f, 0x18},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby
+    {0x3008, OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby
 #endif
     {OV5645_REG_END, 0x00},
 };
@@ -1420,9 +1417,11 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_2592x1944_15fps[] = {
     {0x481f, 0x50},
     {0x4823, 0x70},
     {0x4831, 0x14},
-    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on # of lanes) notice the settle delay.
+    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on
+    // # of lanes) notice the settle delay.
     {0x4837, (1000000000 / OV5645_IDI_CLOCK_RATE_2592x1944_15FPS) * 2},
-    {0x5000, 0xa7}, /* Lenc on, raw gamma on, BPC on, WPC on, color interpolation on */
+    {0x5000,
+     0xa7}, /* Lenc on, raw gamma on, BPC on, WPC on, color interpolation on */
     {0x501d, 0x00},
     {0x503d, 0x00},
     {0x505c, 0x30},
@@ -1599,7 +1598,7 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_2592x1944_15fps[] = {
     {0x3a1e, 0x30},
     {0x3a1f, 0x18},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby
+    {0x3008, OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby
 #endif
     {OV5645_REG_END, 0x00},
 };
@@ -1720,8 +1719,9 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_640x480_24fps[] = {
     {0x481f, 0x50},
     {0x4823, 0x70},
     {0x4831, 0x14},
-    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as default, [2]=1 MIPI bus LP11 when no
-    //packet; Default=0x04
+    //[5]=0 Clock free running, [4]=1 Send line short packet, [3]=0 Use lane1 as
+    //default, [2]=1 MIPI bus LP11 when no
+    // packet; Default=0x04
     {0x4800, CONFIG_CAMERA_OV5645_CSI_LINESYNC_ENABLE ? 0x14 : 0x04},
     {0x5000, 0xa7},
     {0x501d, 0x00},
@@ -1750,7 +1750,7 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_640x480_24fps[] = {
     {0x5187, 0x16},
     {0x5188, 0x16},
     {0x5189, 0x64},
-    {0x518a, 0x6a},  // AWB gain
+    {0x518a, 0x6a}, // AWB gain
     {0x518b, 0xe0},
     {0x518c, 0xb2},
     {0x518d, 0x42},
@@ -1785,7 +1785,7 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_640x480_24fps[] = {
     {0x538B, 0x98},
     {0x5300, 0x08},
     {0x5301, 0x30},
-    {0x5302, 0x2c},  // sharpness
+    {0x5302, 0x2c}, // sharpness
     {0x5303, 0x10},
     {0x5304, 0x08},
     {0x5305, 0x30},
@@ -1945,14 +1945,16 @@ static const ov5645_reginfo_t ov5645_MIPI_2lane_yuv422_640x480_24fps[] = {
     {0x3a19, 0xf8},
     {0x4004, 0x02},
     {0x4005, 0x18},
-    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on # of lanes) notice the settle delay.
+    // little MIPI shit: global timing unit, period of PCLK in ns * 2(depends on
+    // # of lanes) notice the settle delay.
     {0x4837, (1000000000 / OV5645_IDI_CLOCK_RATE_640x480_24FPS) * 2},
     {0x3503, 0x00},
     {0x3406, 0x00},
     {0x3023, 0x01},
     {0x3022, 0x04},
 #if OV5645_OUTPUT_ENABLE_DEFAULT
-    {0x3008, OV5645_SOFT_POWER_DOWN_DIS},  // wake up from software standby(power down)
+    {0x3008,
+     OV5645_SOFT_POWER_DOWN_DIS}, // wake up from software standby(power down)
 #endif
     {OV5645_REG_END, 0x00},
 };

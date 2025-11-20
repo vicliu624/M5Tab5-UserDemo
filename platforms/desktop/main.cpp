@@ -5,25 +5,24 @@
  */
 #include "hal/hal_desktop.h"
 #include <app.h>
-#include <memory>
 #include <hal/hal.h>
+#include <memory>
 
-int main()
-{
-    // 应用层初始化回调
-    app::InitCallback_t callback;
+int main() {
+  // 应用层初始化回调
+  app::InitCallback_t callback;
 
-    callback.onHalInjection = []() {
-        // 注入桌面平台的硬件抽象
-        hal::Inject(std::make_unique<HalDesktop>());
-    };
+  callback.onHalInjection = []() {
+    // 注入桌面平台的硬件抽象
+    hal::Inject(std::make_unique<HalDesktop>());
+  };
 
-    // 启动应用层
-    app::Init(callback);
-    while (!app::IsDone()) {
-        app::Update();
-    }
-    app::Destroy();
+  // 启动应用层
+  app::Init(callback);
+  while (!app::IsDone()) {
+    app::Update();
+  }
+  app::Destroy();
 
-    return 0;
+  return 0;
 }

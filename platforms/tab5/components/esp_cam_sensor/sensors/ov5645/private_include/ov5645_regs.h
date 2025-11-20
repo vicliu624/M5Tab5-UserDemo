@@ -10,13 +10,13 @@
 extern "C" {
 #endif
 
-#define OV5645_REG_END   0xffff
+#define OV5645_REG_END 0xffff
 #define OV5645_REG_DELAY 0xfffe
 
 /* OV5645 registers */
 #define OV5645_REG_SENSOR_ID_H 0x300a
 #define OV5645_REG_SENSOR_ID_L 0x300b
-#define OV5645_MIPI_CONTROL00  0x300e
+#define OV5645_MIPI_CONTROL00 0x300e
 
 /**
  * Output format ISP control registers

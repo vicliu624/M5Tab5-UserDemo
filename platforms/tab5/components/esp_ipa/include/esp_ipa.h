@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <stdbool.h>
 #include "esp_err.h"
 #include "esp_ipa_types.h"
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,11 +48,13 @@ esp_err_t esp_ipa_pipeline_print(esp_ipa_pipeline_handle_t handle);
  *      - ESP_OK on success
  *      - Others if failed
  */
-esp_err_t esp_ipa_pipeline_create(uint8_t ipa_nums, const char **ipa_names, esp_ipa_pipeline_handle_t *handle);
+esp_err_t esp_ipa_pipeline_create(uint8_t ipa_nums, const char **ipa_names,
+                                  esp_ipa_pipeline_handle_t *handle);
 
 /**
- * @brief Initialize image process algorithm pipeline and get initialization ISP/Camera parameters,
- *        These parameters should be set to ISP/Camera before processing IPA pipeline.
+ * @brief Initialize image process algorithm pipeline and get initialization
+ * ISP/Camera parameters, These parameters should be set to ISP/Camera before
+ * processing IPA pipeline.
  *
  * @param handle    Image process algorithm pipeline object handle
  * @param sensor    Sensor's current information
@@ -62,13 +64,14 @@ esp_err_t esp_ipa_pipeline_create(uint8_t ipa_nums, const char **ipa_names, esp_
  *      - ESP_OK on success
  *      - Others if failed
  */
-esp_err_t esp_ipa_pipeline_init(esp_ipa_pipeline_handle_t handle, esp_ipa_sensor_t *sensor,
+esp_err_t esp_ipa_pipeline_init(esp_ipa_pipeline_handle_t handle,
+                                esp_ipa_sensor_t *sensor,
                                 esp_ipa_metadata_t *metadata);
 
 /**
- * @brief Put image statistics and sensor information into the image process algorithm
- *        pipeline and process it. The image process algorithm pipeline will calculate
- *        the meta data used to reconfigure ISP to improve image quality.
+ * @brief Put image statistics and sensor information into the image process
+ * algorithm pipeline and process it. The image process algorithm pipeline will
+ * calculate the meta data used to reconfigure ISP to improve image quality.
  *
  *
  * @param handle    Image process algorithm pipeline object handle
@@ -80,8 +83,10 @@ esp_err_t esp_ipa_pipeline_init(esp_ipa_pipeline_handle_t handle, esp_ipa_sensor
  *      - ESP_OK on success
  *      - Others if failed
  */
-esp_err_t esp_ipa_pipeline_process(esp_ipa_pipeline_handle_t handle, const esp_ipa_stats_t *stats,
-                                   const esp_ipa_sensor_t *sensor, esp_ipa_metadata_t *metadata);
+esp_err_t esp_ipa_pipeline_process(esp_ipa_pipeline_handle_t handle,
+                                   const esp_ipa_stats_t *stats,
+                                   const esp_ipa_sensor_t *sensor,
+                                   esp_ipa_metadata_t *metadata);
 
 /**
  * @brief Destroy image process algorithm pipeline.

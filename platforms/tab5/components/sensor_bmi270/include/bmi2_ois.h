@@ -54,11 +54,11 @@ extern "C" {
 /*!             Header files
  ****************************************************************************/
 #ifdef __KERNEL__
-#include <linux/types.h>
 #include <linux/kernel.h>
+#include <linux/types.h>
 #else
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 #endif
 
 #include "bmi2_defs.h"
@@ -72,21 +72,22 @@ extern "C" {
 #endif
 
 /*! @name  Utility macros */
-#define BMI2_OIS_SET_BITS(reg_data, bitname, data) \
-    ((reg_data & ~(bitname##_MASK)) | ((data << bitname##_POS) & bitname##_MASK))
+#define BMI2_OIS_SET_BITS(reg_data, bitname, data)                             \
+  ((reg_data & ~(bitname##_MASK)) | ((data << bitname##_POS) & bitname##_MASK))
 
-#define BMI2_OIS_GET_BITS(reg_data, bitname) ((reg_data & (bitname##_MASK)) >> (bitname##_POS))
+#define BMI2_OIS_GET_BITS(reg_data, bitname)                                   \
+  ((reg_data & (bitname##_MASK)) >> (bitname##_POS))
 
 /*! @name For enable and disable */
-#define BMI2_OIS_ENABLE  UINT8_C(1)
+#define BMI2_OIS_ENABLE UINT8_C(1)
 #define BMI2_OIS_DISABLE UINT8_C(0)
 
 /*! @name To define success code */
 #define BMI2_OIS_OK UINT8_C(0)
 
 /*! @name To define error codes */
-#define BMI2_OIS_E_NULL_PTR       INT8_C(-1)
-#define BMI2_OIS_E_COM_FAIL       INT8_C(-2)
+#define BMI2_OIS_E_NULL_PTR INT8_C(-1)
+#define BMI2_OIS_E_COM_FAIL INT8_C(-2)
 #define BMI2_OIS_E_INVALID_SENSOR INT8_C(-8)
 
 /*! @name Mask definitions for SPI read/write address for OIS */
@@ -98,10 +99,10 @@ extern "C" {
 
 /*!  @name Macros to select sensor for OIS data read */
 #define BMI2_OIS_ACCEL UINT8_C(0x01)
-#define BMI2_OIS_GYRO  UINT8_C(0x02)
+#define BMI2_OIS_GYRO UINT8_C(0x02)
 
 /*!  @name Macros to define OIS register addresses */
-#define BMI2_OIS_CONFIG_ADDR    UINT8_C(0x40)
+#define BMI2_OIS_CONFIG_ADDR UINT8_C(0x40)
 #define BMI2_OIS_ACC_X_LSB_ADDR UINT8_C(0x0C)
 #define BMI2_OIS_GYR_X_LSB_ADDR UINT8_C(0x12)
 
@@ -114,13 +115,13 @@ extern "C" {
 #define BMI2_OIS_ACC_EN_POS UINT8_C(0x07)
 
 /*! Low pass filter configuration position and mask */
-#define BMI2_OIS_LP_FILTER_EN_POS  UINT8_C(0x00)
+#define BMI2_OIS_LP_FILTER_EN_POS UINT8_C(0x00)
 #define BMI2_OIS_LP_FILTER_EN_MASK UINT8_C(0x01)
 
-#define BMI2_OIS_LP_FILTER_CONFIG_POS  UINT8_C(0x01)
+#define BMI2_OIS_LP_FILTER_CONFIG_POS UINT8_C(0x01)
 #define BMI2_OIS_LP_FILTER_CONFIG_MASK UINT8_C(0x06)
 
-#define BMI2_OIS_LP_FILTER_MUTE_POS  UINT8_C(0x05)
+#define BMI2_OIS_LP_FILTER_MUTE_POS UINT8_C(0x05)
 #define BMI2_OIS_LP_FILTER_MUTE_MASK UINT8_C(0x20)
 
 /******************************************************************************/
@@ -134,14 +135,17 @@ extern "C" {
  * @param[in] reg_addr       : Register address from which data is read.
  * @param[out] reg_data     : Pointer to data buffer where read data is stored.
  * @param[in] len            : Number of bytes of data to be read.
- * @param[in, out] intf_ptr  : Void pointer that can enable the linking of descriptors
- *                                  for interface related call backs.
+ * @param[in, out] intf_ptr  : Void pointer that can enable the linking of
+ * descriptors for interface related call backs.
  *
  *  retval =  BMI2_INTF_RET_SUCCESS -> Success
  *  retval != BMI2_INTF_RET_SUCCESS -> Failure
  *
  */
-typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_read_fptr_t)(uint8_t reg_addr, uint8_t *data, uint32_t len, void *intf_ptr);
+typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_read_fptr_t)(uint8_t reg_addr,
+                                                      uint8_t *data,
+                                                      uint32_t len,
+                                                      void *intf_ptr);
 
 /*!
  * @brief Bus communication function pointer which should be mapped to
@@ -151,14 +155,16 @@ typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_read_fptr_t)(uint8_t reg_addr, uint8_t 
  * @param[in] reg_data     : Pointer to data buffer in which data to be written
  *                            is stored.
  * @param[in] len           : Number of bytes of data to be written.
- * @param[in, out] intf_ptr : Void pointer that can enable the linking of descriptors
- *                            for interface related call backs
+ * @param[in, out] intf_ptr : Void pointer that can enable the linking of
+ * descriptors for interface related call backs
  *
  * retval  = BMI2_INTF_RET_SUCCESS -> Success
  * retval != BMI2_INTF_RET_SUCCESS -> Failure
  *
  */
-typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_write_fptr_t)(uint8_t reg_addr, const uint8_t *data, uint32_t len,
+typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_write_fptr_t)(uint8_t reg_addr,
+                                                       const uint8_t *data,
+                                                       uint32_t len,
                                                        void *intf_ptr);
 
 /*!
@@ -166,8 +172,8 @@ typedef BMI2_INTF_RETURN_TYPE (*bmi2_ois_write_fptr_t)(uint8_t reg_addr, const u
  * delay function of the user
  *
  * @param[in] period              : Delay in microseconds.
- * @param[in, out] intf_ptr       : Void pointer that can enable the linking of descriptors
- *                                  for interface related call backs
+ * @param[in, out] intf_ptr       : Void pointer that can enable the linking of
+ * descriptors for interface related call backs
  *
  */
 typedef void (*bmi2_ois_delay_fptr_t)(uint32_t period, void *intf_ptr);
@@ -177,53 +183,53 @@ typedef void (*bmi2_ois_delay_fptr_t)(uint32_t period, void *intf_ptr);
 /******************************************************************************/
 /*! @name Structure to define accelerometer and gyroscope sensor axes for OIS */
 struct bmi2_ois_sens_axes_data {
-    /*! Data in x-axis */
-    int16_t x;
+  /*! Data in x-axis */
+  int16_t x;
 
-    /*! Data in y-axis */
-    int16_t y;
+  /*! Data in y-axis */
+  int16_t y;
 
-    /*! Data in z-axis */
-    int16_t z;
+  /*! Data in z-axis */
+  int16_t z;
 };
 
 /*!  @name Structure to define bmi2 OIS sensor configurations */
 struct bmi2_ois_dev {
-    /*! Read function pointer */
-    bmi2_ois_read_fptr_t ois_read;
+  /*! Read function pointer */
+  bmi2_ois_read_fptr_t ois_read;
 
-    /*! Write function pointer */
-    bmi2_ois_write_fptr_t ois_write;
+  /*! Write function pointer */
+  bmi2_ois_write_fptr_t ois_write;
 
-    /*!  Delay function pointer */
-    bmi2_ois_delay_fptr_t ois_delay_us;
+  /*!  Delay function pointer */
+  bmi2_ois_delay_fptr_t ois_delay_us;
 
-    /*!  Low pass filter en/dis  */
-    uint8_t lp_filter_en;
+  /*!  Low pass filter en/dis  */
+  uint8_t lp_filter_en;
 
-    /*! Void interface pointer */
-    void *intf_ptr;
+  /*! Void interface pointer */
+  void *intf_ptr;
 
-    /*! To store interface pointer error */
-    int8_t intf_rslt;
+  /*! To store interface pointer error */
+  int8_t intf_rslt;
 
-    /*!  Low pass filter cut-off frequency  */
-    uint8_t lp_filter_config;
+  /*!  Low pass filter cut-off frequency  */
+  uint8_t lp_filter_config;
 
-    /*!  Low pass filter mute  */
-    uint8_t lp_filter_mute;
+  /*!  Low pass filter mute  */
+  uint8_t lp_filter_mute;
 
-    /*! Accelerometer enable for OIS */
-    uint8_t acc_en;
+  /*! Accelerometer enable for OIS */
+  uint8_t acc_en;
 
-    /*! Gyroscope enable for OIS */
-    uint8_t gyr_en;
+  /*! Gyroscope enable for OIS */
+  uint8_t gyr_en;
 
-    /*! Accelerometer data axes */
-    struct bmi2_ois_sens_axes_data acc_data;
+  /*! Accelerometer data axes */
+  struct bmi2_ois_sens_axes_data acc_data;
 
-    /*! Gyroscope data axes */
-    struct bmi2_ois_sens_axes_data gyr_data;
+  /*! Gyroscope data axes */
+  struct bmi2_ois_sens_axes_data gyr_data;
 };
 
 /***************************************************************************/
@@ -258,7 +264,8 @@ struct bmi2_ois_dev {
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_ois_get_regs(uint8_t ois_reg_addr, uint8_t *ois_reg_data, uint16_t data_len, struct bmi2_ois_dev *ois_dev);
+int8_t bmi2_ois_get_regs(uint8_t ois_reg_addr, uint8_t *ois_reg_data,
+                         uint16_t data_len, struct bmi2_ois_dev *ois_dev);
 
 /*!
  * \ingroup bmi2_oisApiRegs
@@ -269,7 +276,8 @@ int8_t bmi2_ois_get_regs(uint8_t ois_reg_addr, uint8_t *ois_reg_data, uint16_t d
  *                        uint16_t data_len,
  *                        const struct bmi2_ois_dev *ois_dev);
  * \endcode
- *  @details This API writes data to the given OIS register address of bmi2 sensor.
+ *  @details This API writes data to the given OIS register address of bmi2
+ * sensor.
  *
  * @param[in] ois_reg_addr  : OIS register address to which the data is written.
  * @param[in] ois_reg_data  : Pointer to data buffer in which data to be written
@@ -281,13 +289,14 @@ int8_t bmi2_ois_get_regs(uint8_t ois_reg_addr, uint8_t *ois_reg_data, uint16_t d
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_ois_set_regs(uint8_t ois_reg_addr, const uint8_t *ois_reg_data, uint16_t data_len,
-                         struct bmi2_ois_dev *ois_dev);
+int8_t bmi2_ois_set_regs(uint8_t ois_reg_addr, const uint8_t *ois_reg_data,
+                         uint16_t data_len, struct bmi2_ois_dev *ois_dev);
 
 /**
  * \ingroup bmi2_ois
  * \defgroup bmi2_oisApiConfig Status update
- * @brief Get / Set the status of Enable / Disable accelerometer / gyroscope data read through OIS interface
+ * @brief Get / Set the status of Enable / Disable accelerometer / gyroscope
+ * data read through OIS interface
  */
 
 /*!
@@ -296,8 +305,8 @@ int8_t bmi2_ois_set_regs(uint8_t ois_reg_addr, const uint8_t *ois_reg_data, uint
  * \code
  * int8_t bmi2_ois_set_config(const struct bmi2_ois_dev *ois_dev);
  * \endcode
- *  @details This API sets the status of enable/disable accelerometer/gyroscope data read through
- * OIS interface.
+ *  @details This API sets the status of enable/disable accelerometer/gyroscope
+ * data read through OIS interface.
  *
  * @param[in] ois_dev   : Structure instance of bmi2_ois_dev.
  *
@@ -346,8 +355,8 @@ int8_t bmi2_ois_get_config(struct bmi2_ois_dev *ois_dev);
  * @param[in] sens_sel          : Select sensor whose data is to be read.
  * @param[in] n_sens            : Number of sensors selected.
  * @param[in, out] ois_dev      : Structure instance of bmi2_ois_dev.
- * @param[in] gyr_cross_sens_zx : Store the gyroscope cross sensitivity values taken from the bmi2xy
- *                                (refer bmi2_ois example).
+ * @param[in] gyr_cross_sens_zx : Store the gyroscope cross sensitivity values
+ * taken from the bmi2xy (refer bmi2_ois example).
  *
  *@verbatim
  *  sens_sel      |   Value
@@ -360,7 +369,8 @@ int8_t bmi2_ois_get_config(struct bmi2_ois_dev *ois_dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi2_ois_read_data(const uint8_t *sens_sel, uint8_t n_sens, struct bmi2_ois_dev *ois_dev,
+int8_t bmi2_ois_read_data(const uint8_t *sens_sel, uint8_t n_sens,
+                          struct bmi2_ois_dev *ois_dev,
                           int16_t gyr_cross_sens_zx);
 
 #ifdef __cplusplus

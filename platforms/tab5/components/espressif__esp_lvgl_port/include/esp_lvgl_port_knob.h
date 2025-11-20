@@ -18,8 +18,8 @@
 #if !__has_include("iot_button.h")
 #error LVLG Knob requires button component. Please add it with idf.py add-dependency espressif/button
 #endif
-#include "iot_knob.h"
 #include "iot_button.h"
+#include "iot_knob.h"
 #define ESP_LVGL_PORT_KNOB_COMPONENT 1
 #endif
 
@@ -36,20 +36,21 @@ extern "C" {
  * @brief Configuration of the encoder structure
  */
 typedef struct {
-    lv_display_t *disp;               /*!< LVGL display handle (returned from lvgl_port_add_disp) */
-    const knob_config_t *encoder_a_b; /*!< Encoder knob configuration */
+  lv_display_t
+      *disp; /*!< LVGL display handle (returned from lvgl_port_add_disp) */
+  const knob_config_t *encoder_a_b; /*!< Encoder knob configuration */
 #if BUTTON_VER_MAJOR < 4
-    const button_config_t *encoder_enter; /*!< Navigation button for enter */
+  const button_config_t *encoder_enter; /*!< Navigation button for enter */
 #else
-    button_handle_t encoder_enter; /*!< Handle for enter button */
+  button_handle_t encoder_enter; /*!< Handle for enter button */
 #endif
 } lvgl_port_encoder_cfg_t;
 
 /**
  * @brief Add encoder as an input device
  *
- * @note Allocated memory in this function is not free in deinit. You must call lvgl_port_remove_encoder for free all
- * memory!
+ * @note Allocated memory in this function is not free in deinit. You must call
+ * lvgl_port_remove_encoder for free all memory!
  *
  * @param encoder_cfg Encoder configuration structure
  * @return Pointer to LVGL encoder input device or NULL when error occurred

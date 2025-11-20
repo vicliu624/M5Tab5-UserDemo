@@ -5,8 +5,8 @@
  */
 #pragma once
 #include "view/view.h"
-#include <mooncake.h>
 #include <memory>
+#include <mooncake.h>
 
 /**
  * @brief 派生 App
@@ -14,14 +14,14 @@
  */
 class AppLauncher : public mooncake::AppAbility {
 public:
-    AppLauncher();
+  AppLauncher();
 
-    // 重写生命周期回调
-    void onCreate() override;
-    void onOpen() override;
-    void onRunning() override;
-    void onClose() override;
+  // 重写生命周期回调
+  void onCreate() override;
+  void onOpen() override;
+  void onRunning() override;
+  void onClose() override;
 
 private:
-    std::unique_ptr<launcher_view::LauncherView> _view;
+  std::unique_ptr<launcher_view::LauncherView> _view;
 };

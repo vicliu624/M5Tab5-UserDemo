@@ -35,10 +35,10 @@ extern "C" {
  * Possible options how to blend opaque drawings
  */
 typedef enum {
-    LV_BLEND_MODE_NORMAL,      /**< Simply mix according to the opacity value*/
-    LV_BLEND_MODE_ADDITIVE,    /**< Add the respective color channels*/
-    LV_BLEND_MODE_SUBTRACTIVE, /**< Subtract the foreground from the background*/
-    LV_BLEND_MODE_MULTIPLY,    /**< Multiply the foreground and background*/
+  LV_BLEND_MODE_NORMAL,      /**< Simply mix according to the opacity value*/
+  LV_BLEND_MODE_ADDITIVE,    /**< Add the respective color channels*/
+  LV_BLEND_MODE_SUBTRACTIVE, /**< Subtract the foreground from the background*/
+  LV_BLEND_MODE_MULTIPLY,    /**< Multiply the foreground and background*/
 } lv_blend_mode_t;
 
 #ifdef __cplusplus

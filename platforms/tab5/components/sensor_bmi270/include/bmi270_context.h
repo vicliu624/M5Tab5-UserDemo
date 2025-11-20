@@ -65,21 +65,21 @@ extern "C" {
 #define BMI270_CONTEXT_CHIP_ID UINT8_C(0x24)
 
 /*! @name BMI270_CONTEXT feature input start addresses */
-#define BMI270_CONTEXT_CONFIG_ID_STRT_ADDR          UINT8_C(0x06)
-#define BMI270_CONTEXT_STEP_CNT_1_STRT_ADDR         UINT8_C(0x00)
-#define BMI270_CONTEXT_STEP_CNT_4_STRT_ADDR         UINT8_C(0x02)
-#define BMI270_CONTEXT_MAX_BURST_LEN_STRT_ADDR      UINT8_C(0x08)
+#define BMI270_CONTEXT_CONFIG_ID_STRT_ADDR UINT8_C(0x06)
+#define BMI270_CONTEXT_STEP_CNT_1_STRT_ADDR UINT8_C(0x00)
+#define BMI270_CONTEXT_STEP_CNT_4_STRT_ADDR UINT8_C(0x02)
+#define BMI270_CONTEXT_MAX_BURST_LEN_STRT_ADDR UINT8_C(0x08)
 #define BMI270_CONTEXT_CRT_GYRO_SELF_TEST_STRT_ADDR UINT8_C(0x09)
-#define BMI270_CONTEXT_ABORT_STRT_ADDR              UINT8_C(0x09)
-#define BMI270_CONTEXT_NVM_PROG_PREP_STRT_ADDR      UINT8_C(0x0A)
-#define BMI270_CONTEXT_ACT_RGN_SETT_STRT_ADDR       UINT8_C(0x00)
-#define BMI270_CONTEXT_ACT_RGN_STRT_ADDR            UINT8_C(0x0A)
+#define BMI270_CONTEXT_ABORT_STRT_ADDR UINT8_C(0x09)
+#define BMI270_CONTEXT_NVM_PROG_PREP_STRT_ADDR UINT8_C(0x0A)
+#define BMI270_CONTEXT_ACT_RGN_SETT_STRT_ADDR UINT8_C(0x00)
+#define BMI270_CONTEXT_ACT_RGN_STRT_ADDR UINT8_C(0x0A)
 
 /*! @name BMI270_CONTEXT feature output start addresses */
-#define BMI270_CONTEXT_STEP_CNT_OUT_STRT_ADDR      UINT8_C(0x00)
+#define BMI270_CONTEXT_STEP_CNT_OUT_STRT_ADDR UINT8_C(0x00)
 #define BMI270_CONTEXT_GYR_USER_GAIN_OUT_STRT_ADDR UINT8_C(0x04)
-#define BMI270_CONTEXT_GYRO_CROSS_SENSE_STRT_ADDR  UINT8_C(0x0C)
-#define BMI270_CONTEXT_NVM_VFRM_OUT_STRT_ADDR      UINT8_C(0x0E)
+#define BMI270_CONTEXT_GYRO_CROSS_SENSE_STRT_ADDR UINT8_C(0x0C)
+#define BMI270_CONTEXT_NVM_VFRM_OUT_STRT_ADDR UINT8_C(0x0E)
 
 /*! @name Defines maximum number of pages */
 #define BMI270_CONTEXT_MAX_PAGE_NUM UINT8_C(8)
@@ -94,7 +94,7 @@ extern "C" {
 #define BMI270_CONTEXT_STEP_CNT_STATUS_MASK UINT8_C(0x01)
 
 /*! @name Mask definitions for feature interrupt mapping bits */
-#define BMI270_C_INT_STEP_COUNTER_MASK  UINT8_C(0x01)
+#define BMI270_C_INT_STEP_COUNTER_MASK UINT8_C(0x01)
 #define BMI270_C_INT_STEP_DETECTOR_MASK UINT8_C(0x01)
 
 /*! @name Defines maximum number of feature interrupts */
@@ -140,9 +140,11 @@ int8_t bmi270_context_init(struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_contextApiSensor
- * \page bmi270_context_api_bmi270_context_sensor_enable bmi270_context_sensor_enable
+ * \page bmi270_context_api_bmi270_context_sensor_enable
+ * bmi270_context_sensor_enable
  * \code
- * int8_t bmi270_context_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_context_sensor_enable(const uint8_t *sens_list, uint8_t n_sens,
+ * struct bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be enabled.
  *
@@ -172,13 +174,16 @@ int8_t bmi270_context_init(struct bmi2_dev *dev);
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_context_sensor_enable(const uint8_t *sens_list, uint8_t n_sens,
+                                    struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_contextApiSensor
- * \page bmi270_context_api_bmi270_context_sensor_disable bmi270_context_sensor_disable
+ * \page bmi270_context_api_bmi270_context_sensor_disable
+ * bmi270_context_sensor_disable
  * \code
- * int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t
+ * n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API selects the sensors/features to be disabled.
  *
@@ -208,7 +213,8 @@ int8_t bmi270_context_sensor_enable(const uint8_t *sens_list, uint8_t n_sens, st
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t n_sens,
+                                     struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_context
@@ -218,9 +224,11 @@ int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, s
 
 /*!
  * \ingroup bmi270_contextApiSensorC
- * \page bmi270_context_api_bmi270_context_set_sensor_config bmi270_context_set_sensor_config
+ * \page bmi270_context_api_bmi270_context_set_sensor_config
+ * bmi270_context_set_sensor_config
  * \code
- * int8_t bmi270_context_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_context_set_sensor_config(struct bmi2_sens_config *sens_cfg,
+ * uint8_t n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API sets the sensor/feature configuration.
  *
@@ -242,13 +250,16 @@ int8_t bmi270_context_sensor_disable(const uint8_t *sens_list, uint8_t n_sens, s
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_context_set_sensor_config(struct bmi2_sens_config *sens_cfg,
+                                        uint8_t n_sens, struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_contextApiSensorC
- * \page bmi270_context_api_bmi270_context_get_sensor_config bmi270_context_get_sensor_config
+ * \page bmi270_context_api_bmi270_context_get_sensor_config
+ * bmi270_context_get_sensor_config
  * \code
- * int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+ * int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg,
+ * uint8_t n_sens, struct bmi2_dev *dev);
  * \endcode
  * @details This API gets the sensor/feature configuration.
  *
@@ -270,7 +281,8 @@ int8_t bmi270_context_set_sensor_config(struct bmi2_sens_config *sens_cfg, uint8
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg,
+                                        uint8_t n_sens, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_context
@@ -280,10 +292,11 @@ int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8
 
 /*!
  * \ingroup bmi270_contextApiSensorD
- * \page bmi270_context_api_bmi270_context_get_feature_data bmi270_context_get_feature_data
+ * \page bmi270_context_api_bmi270_context_get_feature_data
+ * bmi270_context_get_feature_data
  * \code
- * int8_t bmi270_context_get_feature_data(struct bmi2_feat_sensor_data *feature_data, uint8_t n_sens, struct bmi2_dev
- **dev); \endcode
+ * int8_t bmi270_context_get_feature_data(struct bmi2_feat_sensor_data
+ * *feature_data, uint8_t n_sens, struct bmi2_dev *dev); \endcode
  * @details This API gets the feature data.
  *
  * @param[out] feature_data   : Structure instance of bmi2_feat_sensor_data.
@@ -304,8 +317,9 @@ int8_t bmi270_context_get_sensor_config(struct bmi2_sens_config *sens_cfg, uint8
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_get_feature_data(struct bmi2_feat_sensor_data *feature_data, uint8_t n_sens,
-                                       struct bmi2_dev *dev);
+int8_t
+bmi270_context_get_feature_data(struct bmi2_feat_sensor_data *feature_data,
+                                uint8_t n_sens, struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_context
@@ -315,16 +329,18 @@ int8_t bmi270_context_get_feature_data(struct bmi2_feat_sensor_data *feature_dat
 
 /*!
  * \ingroup bmi270_contextApiARecog
- * \page bmi270_context_api_bmi270_context_get_act_recg_sett bmi270_context_get_act_recg_sett
+ * \page bmi270_context_api_bmi270_context_get_act_recg_sett
+ * bmi270_context_get_act_recg_sett
  * \code
- * int8_t bmi270_context_get_act_recg_sett(struct bmi2_act_recg_sett *sett, struct bmi2_dev *dev);
+ * int8_t bmi270_context_get_act_recg_sett(struct bmi2_act_recg_sett *sett,
+ * struct bmi2_dev *dev);
  * \endcode
- * @details This api is used for retrieving the following activity recognition settings currently set.
- * enable/disable post processing(0/1) by default -> 1(enable),
- * Setting the min & max Gini's diversity index (GDI) threshold. min_GDI_tres(0-0XFFFF) by default ->(0x06e1)
- * max_GDI_tres(0-0xFFFF) by default ->(0x0A66)
- * buffer size for post processing. range (1-0x0A) default -> (0x0A)
- * min segment confidence.  range (1-0x0A) default -> (0x0A)
+ * @details This api is used for retrieving the following activity recognition
+ * settings currently set. enable/disable post processing(0/1) by default ->
+ * 1(enable), Setting the min & max Gini's diversity index (GDI) threshold.
+ * min_GDI_tres(0-0XFFFF) by default ->(0x06e1) max_GDI_tres(0-0xFFFF) by
+ * default ->(0x0A66) buffer size for post processing. range (1-0x0A) default ->
+ * (0x0A) min segment confidence.  range (1-0x0A) default -> (0x0A)
  *
  * @param[in] sett  : Structure instance of bmi2_act_recg_sett.
  * @param[in] dev   : Structure instance of bmi2_dev.
@@ -333,20 +349,23 @@ int8_t bmi270_context_get_feature_data(struct bmi2_feat_sensor_data *feature_dat
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_get_act_recg_sett(struct bmi2_act_recg_sett *sett, struct bmi2_dev *dev);
+int8_t bmi270_context_get_act_recg_sett(struct bmi2_act_recg_sett *sett,
+                                        struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_contextApiARecog
- * \page bmi270_context_api_bmi270_context_set_act_recg_sett bmi270_context_set_act_recg_sett
+ * \page bmi270_context_api_bmi270_context_set_act_recg_sett
+ * bmi270_context_set_act_recg_sett
  * \code
- * int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett *sett, struct bmi2_dev *dev);
+ * int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett
+ * *sett, struct bmi2_dev *dev);
  * \endcode
- * @details This api is used for setting the following activity recognition settings
- * enable/disable post processing(0/1) by default -> 1(enable),
- * Setting the min & max Gini's diversity index (GDI) threshold. min_GDI_tres(0-0XFFFF) by default ->(0x06e1)
- * max_GDI_tres(0-0xFFFF) by default ->(0x0A66)
- * buffer size for post processing. range (1-0x0A) default -> (0x0A)
- * min segment confidence.  range (1-0x0A) default -> (0x0A)
+ * @details This api is used for setting the following activity recognition
+ * settings enable/disable post processing(0/1) by default -> 1(enable), Setting
+ * the min & max Gini's diversity index (GDI) threshold. min_GDI_tres(0-0XFFFF)
+ * by default ->(0x06e1) max_GDI_tres(0-0xFFFF) by default ->(0x0A66) buffer
+ * size for post processing. range (1-0x0A) default -> (0x0A) min segment
+ * confidence.  range (1-0x0A) default -> (0x0A)
  *
  * @param[in] sett  : Structure instance of bmi2_act_recg_sett.
  * @param[in] dev   : Structure instance of bmi2_dev.
@@ -355,7 +374,8 @@ int8_t bmi270_context_get_act_recg_sett(struct bmi2_act_recg_sett *sett, struct 
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett *sett, struct bmi2_dev *dev);
+int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett *sett,
+                                        struct bmi2_dev *dev);
 
 /**
  * \ingroup bmi270_contex
@@ -365,12 +385,12 @@ int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett *sett, s
 
 /*!
  * \ingroup bmi270_contextApiactOut
- * \page bmi270_context_api_bmi270_context_get_act_recog_output bmi270_context_get_act_recog_output
+ * \page bmi270_context_api_bmi270_context_get_act_recog_output
+ * bmi270_context_get_act_recog_output
  * \code
- * int8_t bmi270_context_get_act_recog_output(struct bmi2_act_recog_output *act_recog,
- *                                uint16_t *act_frm_len,
- *                                struct bmi2_fifo_frame *fifo,
- *                                const struct bmi2_dev *dev);
+ * int8_t bmi270_context_get_act_recog_output(struct bmi2_act_recog_output
+ * *act_recog, uint16_t *act_frm_len, struct bmi2_fifo_frame *fifo, const struct
+ * bmi2_dev *dev);
  *
  * \endcode
  * @details This internal API is used to parse the activity output from the
@@ -419,14 +439,17 @@ int8_t bmi270_context_set_act_recg_sett(const struct bmi2_act_recg_sett *sett, s
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_get_act_recog_output(struct bmi2_act_recog_output *act_recog, uint16_t *act_frm_len,
-                                           struct bmi2_fifo_frame *fifo, const struct bmi2_dev *dev);
+int8_t bmi270_context_get_act_recog_output(
+    struct bmi2_act_recog_output *act_recog, uint16_t *act_frm_len,
+    struct bmi2_fifo_frame *fifo, const struct bmi2_dev *dev);
 
 /*!
  * \ingroup bmi270_contextApiInt
- * \page bmi270_context_api_bmi270_context_map_feat_int bmi270_context_map_feat_int
+ * \page bmi270_context_api_bmi270_context_map_feat_int
+ * bmi270_context_map_feat_int
  * \code
- * int8_t bmi270_context_map_feat_int(const struct bmi2_sens_int_config *sens_int, uint8_t n_sens, struct bmi2_dev *dev)
+ * int8_t bmi270_context_map_feat_int(const struct bmi2_sens_int_config
+ * *sens_int, uint8_t n_sens, struct bmi2_dev *dev)
  * \endcode
  * @details This API maps/unmaps feature interrupts to that of interrupt pins.
  *
@@ -438,7 +461,8 @@ int8_t bmi270_context_get_act_recog_output(struct bmi2_act_recog_output *act_rec
  * @retval 0 -> Success
  * @retval < 0 -> Fail
  */
-int8_t bmi270_context_map_feat_int(const struct bmi2_sens_int_config *sens_int, uint8_t n_sens, struct bmi2_dev *dev);
+int8_t bmi270_context_map_feat_int(const struct bmi2_sens_int_config *sens_int,
+                                   uint8_t n_sens, struct bmi2_dev *dev);
 
 /******************************************************************************/
 /*! @name       C++ Guard Macros                                      */

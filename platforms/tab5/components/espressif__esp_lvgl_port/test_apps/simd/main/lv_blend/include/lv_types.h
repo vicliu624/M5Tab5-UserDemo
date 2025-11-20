@@ -29,9 +29,10 @@ extern "C" {
  * LVGL error codes.
  */
 typedef enum {
-    LV_RESULT_INVALID = 0, /*Typically indicates that the object is deleted (become invalid) in the action
-                      function or an operation was failed*/
-    LV_RESULT_OK,          /*The object is valid (no deleted) after the action*/
+  LV_RESULT_INVALID =
+      0, /*Typically indicates that the object is deleted (become invalid) in
+    the action function or an operation was failed*/
+  LV_RESULT_OK, /*The object is valid (no deleted) after the action*/
 } lv_result_t;
 
 /**********************

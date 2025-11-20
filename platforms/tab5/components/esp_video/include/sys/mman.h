@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include <unistd.h>
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
+#include <unistd.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define PROT_NONE  0x0      /* Page may not be accessed */
-#define PROT_READ  (1 << 0) /* Page may be read */
+#define PROT_NONE 0x0       /* Page may not be accessed */
+#define PROT_READ (1 << 0)  /* Page may be read */
 #define PROT_WRITE (1 << 1) /* Page may be written */
 
 #define MAP_SHARED (1 << 0) /* Share this mapping */
@@ -23,10 +23,13 @@ extern "C" {
 /**
  * @brief This is only used for video device to map video buffer to user side.
  *
- * @param addr   Video ignores this parameter, it's recommended to fixedly set NULL
+ * @param addr   Video ignores this parameter, it's recommended to fixedly set
+ * NULL
  * @param length Mapped buffer length should <= video buffer length
- * @param prot   Video ignores this parameter, it's recommended to fixedly set (PROT_READ | PROT_WRITE)
- * @param flags  Video ignores this parameter, it's recommended to fixedly set MAP_SHARED
+ * @param prot   Video ignores this parameter, it's recommended to fixedly set
+ * (PROT_READ | PROT_WRITE)
+ * @param flags  Video ignores this parameter, it's recommended to fixedly set
+ * MAP_SHARED
  * @param fd     Video device file description
  * @param offset Video buffer offset
  *
@@ -34,7 +37,8 @@ extern "C" {
  *      - Mapped video buffer pointer on success
  *      - NULL if failed
  */
-void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
+void *mmap(void *addr, size_t length, int prot, int flags, int fd,
+           off_t offset);
 
 /**
  * @brief Free mapped video buffer

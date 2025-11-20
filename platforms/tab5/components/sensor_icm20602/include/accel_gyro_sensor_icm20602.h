@@ -4,8 +4,8 @@
 extern "C" {
 #endif
 
-#include "esp_err.h"
 #include "driver/i2c_master.h"
+#include "esp_err.h"
 
 /**
  * 初始化

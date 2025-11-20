@@ -16,10 +16,11 @@ extern "C" {
  * @brief ISP initialization configuration
  */
 typedef struct esp_video_isp_config {
-    const char *isp_dev;    /*!< ISP video device name */
-    const char *cam_dev;    /*!< Camera interface video device name, such as "/dev/video0"(MIPI-CSI) */
-    int ipa_nums;           /*!< IPA numbers */
-    const char **ipa_names; /*!< IPA name array */
+  const char *isp_dev;    /*!< ISP video device name */
+  const char *cam_dev;    /*!< Camera interface video device name, such as
+                             "/dev/video0"(MIPI-CSI) */
+  int ipa_nums;           /*!< IPA numbers */
+  const char **ipa_names; /*!< IPA name array */
 } esp_video_isp_config_t;
 
 /**

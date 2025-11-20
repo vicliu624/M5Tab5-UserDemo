@@ -32,15 +32,16 @@ extern "C" {
  * @brief Configuration touch structure
  */
 typedef struct {
-    lv_display_t *disp;            /*!< LVGL display handle (returned from lvgl_port_add_disp) */
-    esp_lcd_touch_handle_t handle; /*!< LCD touch IO handle */
+  lv_display_t
+      *disp; /*!< LVGL display handle (returned from lvgl_port_add_disp) */
+  esp_lcd_touch_handle_t handle; /*!< LCD touch IO handle */
 } lvgl_port_touch_cfg_t;
 
 /**
  * @brief Add LCD touch as an input device
  *
- * @note Allocated memory in this function is not free in deinit. You must call lvgl_port_remove_touch for free all
- * memory!
+ * @note Allocated memory in this function is not free in deinit. You must call
+ * lvgl_port_remove_touch for free all memory!
  *
  * @param touch_cfg Touch configuration structure
  * @return Pointer to LVGL touch input device or NULL when error occurred

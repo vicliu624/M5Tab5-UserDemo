@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include "linux/ioctl.h"
 #include "esp_vfs.h"
 #include "esp_video.h"
+#include "linux/ioctl.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -17,10 +17,10 @@ extern "C" {
 #define VIDIOC_MMAP _IOWR('V', 192, struct esp_video_ioctl_mmap)
 
 struct esp_video_ioctl_mmap {
-    size_t length;
-    off_t offset;
+  size_t length;
+  off_t offset;
 
-    void *mapped_ptr;
+  void *mapped_ptr;
 };
 
 /**

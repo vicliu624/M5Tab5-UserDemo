@@ -16,8 +16,8 @@ extern "C" {
  * SC2336 camera sensor register type definition.
  */
 typedef struct {
-    uint16_t reg;
-    uint8_t val;
+  uint16_t reg;
+  uint8_t val;
 } sc2336_reginfo_t;
 
 #ifdef __cplusplus
