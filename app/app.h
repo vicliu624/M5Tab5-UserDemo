@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 #pragma once
-#include <mooncake.h>
 #include <functional>
+#include <mooncake.h>
 
 /**
  * @brief Application layer
@@ -14,7 +14,7 @@
 namespace app {
 
 struct InitCallback_t {
-    std::function<void()> onHalInjection = nullptr;
+  std::function<void()> onHalInjection = nullptr;
 };
 
 /**
@@ -44,4 +44,4 @@ bool IsDone();
  */
 void Destroy();
 
-}  // namespace app
+} // namespace app

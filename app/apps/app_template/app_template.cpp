@@ -15,31 +15,22 @@
 
 using namespace mooncake;
 
-AppTemplate::AppTemplate()
-{
-    // 配置 App 信息
-    setAppInfo().name = "AppTemplate";
+AppTemplate::AppTemplate() {
+  // 配置 App 信息
+  setAppInfo().name = "AppTemplate";
 }
 
-void AppTemplate::onCreate()
-{
-    mclog::tagInfo(getAppInfo().name, "on create");
+void AppTemplate::onCreate() {
+  mclog::tagInfo(getAppInfo().name, "on create");
 
-    // 打开自己
-    open();
+  // 打开自己
+  open();
 }
 
-void AppTemplate::onOpen()
-{
-    mclog::tagInfo(getAppInfo().name, "on open");
+void AppTemplate::onOpen() { mclog::tagInfo(getAppInfo().name, "on open"); }
+
+void AppTemplate::onRunning() {
+  // mclog::tagInfo(getAppInfo().name, "on running");
 }
 
-void AppTemplate::onRunning()
-{
-    // mclog::tagInfo(getAppInfo().name, "on running");
-}
-
-void AppTemplate::onClose()
-{
-    mclog::tagInfo(getAppInfo().name, "on close");
-}
+void AppTemplate::onClose() { mclog::tagInfo(getAppInfo().name, "on close"); }
